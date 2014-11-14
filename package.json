@@ -1,0 +1,30 @@
+{
+  "name": "mango-cli",
+  "version": "0.0.0",
+  "description": "[WIP] Project scaffolding and build tool to accelerate development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manGoweb/mango-cli.git"
+  },
+  "keywords": [
+    "frontend",
+    "scaffolding",
+    "generator",
+    "build",
+    "gulp",
+    "stylus"
+  ],
+  "author": "manGoweb s.r.o. <info@mangoweb.cz> (www.mangoweb.cz)",
+  "contributors": [
+    "Matěj Šimek <email@matejsimek.cz> (www.matejsimek.cz)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manGoweb/mango-cli/issues"
+  },
+  "homepage": "https://github.com/manGoweb/mango-cli"
+}
