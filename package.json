@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "mango": "bin/mango"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/manGoweb/mango-cli.git"
@@ -26,5 +29,11 @@
   "bugs": {
     "url": "https://github.com/manGoweb/mango-cli/issues"
   },
-  "homepage": "https://github.com/manGoweb/mango-cli"
+  "homepage": "https://github.com/manGoweb/mango-cli",
+  "dependencies": {
+    "commander": "^2.5.0",
+    "duo": "^0.8.10",
+    "duo-gulp": "0.0.1",
+    "inquirer": "^0.8.0"
+  }
 }
