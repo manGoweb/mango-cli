@@ -1,0 +1,35 @@
+$gratio = 1.618
+$pi = 3.14159
+
+$base-font-size = 16px
+$font-family-base = Raleway, $font-family-sans-serif
+$font-family-head = $font-family-base
+
+$radius = 2px
+$spacing = ceil($base-font-size * $gratio)
+$padding = ceil($base-font-size * $gratio)
+
+$c-main = #009933
+$c-comp = #666
+
+$text-color = #000
+$text-back = #fff
+
+
+@keyframes shaking
+	0%
+		transform translate(0px, 0px)
+	50%
+		transform translate(-1px, 0px)
+
+@keyframes takeoff
+	0%
+		transform translate(0px, 0px)
+	100%
+		transform translate(4663px, -10000px)
+
+@keyframes move-twink-back
+	from
+		background-position 0 0
+	to
+		background-position -10000px 5000px

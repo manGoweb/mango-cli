@@ -1,0 +1,41 @@
+.intro
+	height 100%
+	background #000 url(../img/stars.png) repeat top center
+	text-align center
+	overflow hidden
+
+	&:before
+		content ''
+		display inline-block
+		height 100%
+		vertical-align middle
+	&:after
+		content ''
+		absolute top right bottom left
+		background url(../img/twinkling.png) repeat top center
+		animation move-twink-back 200s linear infinite
+
+	&-head
+		display inline-block
+		vertical-align middle
+		text-align center
+		color #eee
+		position relative
+		z-index 10
+
+	&-icon
+		display inline-block
+		margin-bottom $spacing * -6
+		transform-origin 50% 50%
+		&:hover
+			animation shaking 150ms linear infinite
+	&:target .intro-icon
+		animation takeoff 2000ms ease forwards
+
+	&-title
+		text-shadow: 0 0 20px #000
+		position relative
+		z-index 10
+	&-subtitle
+		font-size $gratio * 2em
+
