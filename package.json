@@ -37,5 +37,8 @@
     "duo-gulp": "0.0.1",
     "gift": "^0.4.3-1",
     "inquirer": "^0.8.0"
+  },
+  "config": {
+    "default_fork_repo": "git@github.com:manGoweb/WordPress-boilerplate.git"
   }
 }

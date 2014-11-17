@@ -10,11 +10,11 @@ program
 program
 	.command('init [path] [name]')
 	.description('initialize a new project')
-	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to git@github.com:manGoweb/WordPress-boilerplate.git')
+	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
 	.action(function init(path, name, options) {
 		var mango = new Mango()
 		var dir = require('path').resolve(process.cwd(), path || '.')
-		var source = options.source || 'git@github.com:manGoweb/WordPress-boilerplate.git'
+		var source = options.source || pkg.config.default_fork_repo
 		mango.init(dir, name, source)
 	})
 
