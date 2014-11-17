@@ -1,8 +1,13 @@
 #!/usr/bin/env node
+var Mango = require('../lib/mango')
+var path = require('path')
 var pkg = require('../package.json')
 var program = require('commander')
-// var inquirer = require("inquirer")
-var Mango = require('../lib/mango')
+
+
+var getMangoConfig = function() {
+	return require(path.resolve(process.cwd(), '.mango'))
+}
 
 program
 	.version(pkg.version)
@@ -13,10 +18,19 @@ program
 	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
 	.action(function init(path, name, options) {
 		var mango = new Mango()
-		var dir = require('path').resolve(process.cwd(), path || '.')
+		var dir = path.resolve(process.cwd(), path || '.')
 		var source = options.source || pkg.config.default_fork_repo
 		mango.init(dir, name, source)
 	})
 
+program
+	.command('build [tasks...]')
+	.description('build project assets for production')
+	.action(function build(tasks) {
+		var mango = new Mango()
+		var dir = process.cwd()
+		var config = getMangoConfig()
+		mango.build(dir, config, tasks)
+	})
 
 program.parse(process.argv)
