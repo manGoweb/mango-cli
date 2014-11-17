@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+module.exports = {
+
+	styles: [
+		'styles/screen.styl'
+	],
+
+	scripts: [
+		'js/index.js',
+		'js/ie8.js'
+	],
+
+	templates: [
+		'templates/*.hbs'
+	],
+
+	images: [
+		'img/**/*.jpg',
+		'img/**/*.png',
+		'img/**/*.svg'
+	],
+
+	dependencies: [
+		'lt-ie-9',
+		'jquery',
+		'react'
+	],
+
+	dist_folder: 'dist'
+
+}
