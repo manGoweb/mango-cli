@@ -31,6 +31,13 @@ mango init --source [git_repo] [path_to] [project_name]
 \- forks a repository to given folder
 
 
+### Managing project dependencies
+
+
+```sh
+mango install [packages...]
+```
+
 
 ### Project build
 

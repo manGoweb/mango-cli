@@ -24,6 +24,17 @@ program
 	})
 
 program
+	.command('install [packages...]')
+	.alias('i')
+	.description('NPM install of passed packages and dependencies specified in .mango')
+	.action(function install(packages) {
+		var mango = new Mango()
+		var dir = process.cwd()
+		var config = getMangoConfig()
+		mango.install(dir, config, packages)
+	})
+
+program
 	.command('build [tasks...]')
 	.description('build project assets for production')
 	.action(function build(tasks) {
