@@ -13,12 +13,12 @@ program
 	.version(pkg.version)
 
 program
-	.command('init [path] [name]')
+	.command('init [directory] [name]')
 	.description('initialize a new project')
 	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
-	.action(function init(path, name, options) {
+	.action(function init(directory, name, options) {
 		var mango = new Mango()
-		var dir = path.resolve(process.cwd(), path || '.')
+		var dir = path.resolve(process.cwd(), directory || '.')
 		var source = options.source || pkg.config.default_fork_repo
 		mango.init(dir, name, source)
 	})
