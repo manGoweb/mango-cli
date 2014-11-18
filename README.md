@@ -1,13 +1,7 @@
 mango-cli
 =========
 
-Project scaffolding and build tool to accelerate development
-
-
-## Requirements
-
-* Node.js
-* Git executable in PATH
+A project scaffolding and build tool to accelerate your development
 
 
 ## Installation
@@ -19,6 +13,13 @@ npm install -g mango-cli
 ```
 
 
+### Requirements
+
+* Node.js
+* Git executable in PATH
+
+
+
 ## Usage
 
 
@@ -28,7 +29,7 @@ npm install -g mango-cli
 mango init --source [git_repo] [path_to] [project_name]
 ```
 
-\- forks a repository to given folder
+Forks a repository to folder. Default repo is currently [manGoweb/WordPress-boilerplate](https://github.com/manGoweb/WordPress-boilerplate)
 
 
 ### Managing project dependencies
@@ -38,10 +39,12 @@ mango init --source [git_repo] [path_to] [project_name]
 mango install [packages...]
 ```
 
+Maintain current dependencies in the `.mango` config file under the `dependencies` section.
+
 
 ### Project build
 
-Assuming a config file `.mango` is present in a current directory and contains:
+Assuming the config file `.mango` is present in a current directory and contains:
 
 ```js
 #!/usr/bin/env node
@@ -78,9 +81,16 @@ Current support for:
 * Browserify - Node.js modules in the browser
 * NPM - Node.js package manager
 
+
 #### Production build
 
 ```sh
 mango build [tasks...]
 ```
+
+
+#### Develomned mode
+
+...coming soon
+
 
