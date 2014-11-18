@@ -88,9 +88,13 @@ Current support for:
 mango build [tasks...]
 ```
 
+All assets are compiled and minified into dist folder, ready for production use.
+
 
 #### Develomned mode
 
-...coming soon
+```sh
+mango dev [http_proxy]
+```
 
-
+Starts BrowserSync server (or proxy server) and watch for assets change.

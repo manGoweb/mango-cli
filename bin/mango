@@ -44,4 +44,15 @@ program
 		mango.build(dir, config, tasks)
 	})
 
+program
+	.command('dev')
+	.description('start a development mode and watch for assets change')
+	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
+	.action(function (options) {
+		var mango = new Mango()
+		var dir = process.cwd()
+		var config = getMangoConfig()
+		mango.dev(dir, config, options.http_proxy)
+	})
+
 program.parse(process.argv)

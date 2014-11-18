@@ -32,6 +32,7 @@
   "homepage": "https://github.com/manGoweb/mango-cli",
   "dependencies": {
     "better-console": "^0.2.3",
+    "browser-sync": "^1.7.0",
     "browserify": "^6.3.2",
     "coffeeify": "^1.0.0",
     "commander": "^2.5.0",
