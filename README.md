@@ -59,9 +59,7 @@ module.exports = {
 	],
 
 	images: [
-		'img/**/*.jpg',
-		'img/**/*.png',
-		'img/**/*.svg'
+		'img/**/*.{jpg,png,svg}'
 	],
 
 	dependencies: [
