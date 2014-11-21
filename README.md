@@ -83,6 +83,9 @@ Assuming the config file `mango.json` is present in a current directory and cont
 	"dependencies": [
 		"jquery"
 	],
+	"watch": [
+		"app/**"
+	],
 	"dist_folder": "dist"
 }
 ```
