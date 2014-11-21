@@ -1,6 +1,6 @@
 {
   "name": "mango-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "[WIP] Project scaffolding and build tool to accelerate development",
   "main": "index.js",
   "scripts": {
