@@ -66,32 +66,24 @@ Maintain current list in the `mango.json` config file under the `dependencies` s
 
 Assuming the config file `mango.json` is present in a current directory and contains:
 
-```js
-#!/usr/bin/env node
-module.exports = {
-
-	styles: [
-		'styles/screen.styl'
+```json
+{
+	"styles": [
+		"styles/screen.styl"
 	],
-
-	scripts: [
-		'scripts/index.js'
+	"scripts": [
+		"scripts/index.js"
 	],
-
-	images: [
-		'img/**/*.{jpg,png,svg}'
+	"images": [
+		"img/**/*.{jpg,png,svg}"
 	],
-
-	templates: [
-		'templates/**/*.jade'
-	]
-
-	dependencies: [
-		'jquery'
+	"templates": [
+		"templates/**/*.jade",
 	],
-
-	dist_folder: 'dist'
-
+	"dependencies": [
+		"jquery"
+	],
+	"dist_folder": "dist"
 }
 ```
 
