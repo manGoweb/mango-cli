@@ -10,12 +10,13 @@ module.exports = {
 		'js/ie8.js'
 	],
 
-	templates: [
-		'templates/*.hbs'
-	],
-
 	images: [
 		'img/**/*.{jpg,png,svg}'
+	],
+
+	templates: [
+		'templates/**/*.jade',
+		'!**/_*.jade'
 	],
 
 	dependencies: [
