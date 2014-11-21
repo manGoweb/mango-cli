@@ -25,6 +25,10 @@ module.exports = {
 		'react'
 	],
 
+	watch: [
+		'app/**'
+	],
+
 	dist_folder: 'dist'
 
 }
