@@ -6,7 +6,7 @@ var program = require('commander')
 
 
 var getMangoConfig = function() {
-	return require(path.resolve(process.cwd(), '.mango'))
+	return require(path.resolve(process.cwd(), 'mango.json'))
 }
 
 program

@@ -59,12 +59,12 @@ mango install [packages...]
 ```
 
 Installs packages from NPM and stores them in `node_modules` folder, from where you can `require` them (thanks to browserify).
-Maintain current list in the `.mango` config file under the `dependencies` section.
+Maintain current list in the `mango.json` config file under the `dependencies` section.
 
 
 ### Project build
 
-Assuming the config file `.mango` is present in a current directory and contains:
+Assuming the config file `mango.json` is present in a current directory and contains:
 
 ```js
 #!/usr/bin/env node
