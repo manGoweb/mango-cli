@@ -1,45 +1,64 @@
 mango-cli
 =========
 
-A project scaffolding and build tool to accelerate your development
+Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.
+
+## Under the hood
+
+* [Stylus](http://learnboost.github.io/stylus) - expressive, robust, feature-rich CSS preprocessor
+* [React](http://facebook.github.io/react) - JavaScript library for building user interfaces from Facebook
+* [CoffeeScript](http://coffeescript.org) - little language that compiles into JavaScript
+* [Browserify](http://browserify.org) - JavaScript bundling with require() in the browser
+* [BrowserSync](http://www.browsersync.io) - Time-saving synchronised browser testing
+* [NPM](https://www.npmjs.org) - Node.js package manager
+* [Gulp](http://gulpjs.com/) - Automated build tasks
+* [UglifyJS](http://lisperator.net/uglifyjs) - JavaScript minifier
+* [Clean-CSS](https://github.com/jakubpawlowicz/clean-css) - Fast and efficient CSS minifier
+* [Imagemin](https://github.com/imagemin/imagemin) - Seamless image minification 
+* [Sourcemaps](https://github.com/floridoo/gulp-sourcemaps) - debug like a pro
 
 
 ## Installation
 
-Install mango-cli straight from `npm` with:
+Install mango-cli once from `npm` and use it everywhere:
 
 ```sh
 npm install -g mango-cli
 ```
 
-
-### Requirements
-
-* Node.js
-* Git executable in PATH
-
+Just a few requirements you already have: [Node.js](http://nodejs.org) and [Git](http://git-scm.com) executable in PATH
 
 
 ## Usage
 
+* `mango init` - scaffolding and initialization
+* `mango install` - dependency installation
+* `mango build` - production build
+* `mango dev` - development mode
 
-### Project initialization
+Feel free to use `mango [command] -h` for detailed instructions
+
+
+### Project scaffolding and initialization
 
 ```sh
-mango init --source [git_repo] [path_to] [project_name]
+mango init [options] [directory]
 ```
 
-Forks a repository to folder. Default repo is currently [manGoweb/WordPress-boilerplate](https://github.com/manGoweb/WordPress-boilerplate)
+Forks a template into folder. 
+
+Options:
+* `-s, --source [git_repository]` - Template git repository to fork. Default repo is currently [manGoweb/WordPress-boilerplate](https://github.com/manGoweb/WordPress-boilerplate)
 
 
 ### Managing project dependencies
-
 
 ```sh
 mango install [packages...]
 ```
 
-Maintain current dependencies in the `.mango` config file under the `dependencies` section.
+Installs packages from NPM and stores them in `node_modules` folder, from where you can `require` them (thanks to browserify).
+Maintain current list in the `.mango` config file under the `dependencies` section.
 
 
 ### Project build
@@ -55,7 +74,7 @@ module.exports = {
 	],
 
 	scripts: [
-		'js/index.js'
+		'scripts/index.js'
 	],
 
 	images: [
@@ -71,14 +90,6 @@ module.exports = {
 }
 ```
 
-Current support for:
-
-* Stylus - expressive, robust, feature-rich CSS preprocessor
-* CoffeeScript - little language that compiles into JavaScript
-* React - JavaScript library for building user interfaces
-* Browserify - Node.js modules in the browser
-* NPM - Node.js package manager
-
 
 #### Production build
 
@@ -86,13 +97,22 @@ Current support for:
 mango build [tasks...]
 ```
 
-All assets are compiled and minified into dist folder, ready for production use.
+All assets are compiled and minified into `dist_folder`, ready for production use.
+
+Options:
+* `[tasks...]` - run only specified tasks as `styles`, `scripts`, `images`
 
 
-#### Develomned mode
+#### Development mode
 
 ```sh
 mango dev [http_proxy]
 ```
 
-Starts BrowserSync server (or proxy server) and watch for assets change.
+Starts BrowserSync server (or proxy server) and watch for assets change. 
+
+
+
+## Copyright
+
+Copyright 2014 by [manGoweb s.r.o.](http://www.mangoweb.cz) Code released under [the MIT license](LICENSE). Evolved from [Frontbase](http://frontbase.org) devstack.
