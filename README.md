@@ -6,6 +6,7 @@ Scaffold and build your projects way more faster than before. Preconfigured fron
 ## Under the hood
 
 * [Stylus](http://learnboost.github.io/stylus) - expressive, robust, feature-rich CSS preprocessor
+* [Jade](http://jade-lang.com) - robust, elegant and feature rich template engine
 * [React](http://facebook.github.io/react) - JavaScript library for building user interfaces from Facebook
 * [CoffeeScript](http://coffeescript.org) - little language that compiles into JavaScript
 * [Browserify](http://browserify.org) - JavaScript bundling with require() in the browser
@@ -14,7 +15,7 @@ Scaffold and build your projects way more faster than before. Preconfigured fron
 * [Gulp](http://gulpjs.com/) - Automated build tasks
 * [UglifyJS](http://lisperator.net/uglifyjs) - JavaScript minifier
 * [Clean-CSS](https://github.com/jakubpawlowicz/clean-css) - Fast and efficient CSS minifier
-* [Imagemin](https://github.com/imagemin/imagemin) - Seamless image minification 
+* [Imagemin](https://github.com/imagemin/imagemin) - Seamless image minification
 * [Sourcemaps](https://github.com/floridoo/gulp-sourcemaps) - debug like a pro
 
 
@@ -45,7 +46,7 @@ Feel free to use `mango [command] -h` for detailed instructions
 mango init [options] [directory]
 ```
 
-Forks a template into folder. 
+Forks a template into folder.
 
 Options:
 * `-s, --source [git_repository]` - Template git repository to fork. Default repo is currently [manGoweb/WordPress-boilerplate](https://github.com/manGoweb/WordPress-boilerplate)
@@ -81,6 +82,10 @@ module.exports = {
 		'img/**/*.{jpg,png,svg}'
 	],
 
+	templates: [
+		'templates/**/*.jade'
+	]
+
 	dependencies: [
 		'jquery'
 	],
@@ -100,7 +105,7 @@ mango build [tasks...]
 All assets are compiled and minified into `dist_folder`, ready for production use.
 
 Options:
-* `[tasks...]` - run only specified tasks as `styles`, `scripts`, `images`
+* `[tasks...]` - run only specified tasks as `styles`, `scripts`, `images`, `templates`
 
 
 #### Development mode
@@ -109,7 +114,7 @@ Options:
 mango dev [http_proxy]
 ```
 
-Starts BrowserSync server (or proxy server) and watch for assets change. 
+Starts BrowserSync server (or proxy server) and watch for assets change.
 
 
 
