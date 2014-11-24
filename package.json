@@ -60,7 +60,7 @@
     "vinyl-transform": "0.0.1"
   },
   "config": {
-    "default_fork_repo": "git@github.com:frontbase/Frontbase.git"
+    "default_fork_repo": "https://github.com/frontbase/Frontbase.git"
   },
   "devDependencies": {
     "mocha": "^2.0.1",
