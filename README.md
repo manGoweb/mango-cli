@@ -49,7 +49,7 @@ mango init [options] [directory]
 Forks a template into folder.
 
 Options:
-* `-s, --source [git_repository]` - Template git repository to fork. Default repo is currently [manGoweb/WordPress-boilerplate](https://github.com/manGoweb/WordPress-boilerplate)
+* `-s, --source [git_repository]` - git repository with a template to fork. Default is currently the [Frontbase](http://frontbase.org)
 
 
 ### Managing project dependencies
