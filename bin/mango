@@ -7,10 +7,9 @@ var jf = require('jsonfile')
 var log = require('better-console')
 
 var CONFIG_PATH = path.resolve(process.cwd(), 'mango.json')
-
 var CONFIG_LOCAL_PATH = path.resolve(process.cwd(), 'mango.local.json')
 
-var getMangoConfig = function() {
+var getConfig = function() {
 	var config = jf.readFileSync(CONFIG_PATH, { throws: false })
 	var config_local = jf.readFileSync(CONFIG_LOCAL_PATH, { throws: false })
 
@@ -26,7 +25,7 @@ var getMangoConfig = function() {
 	}
 	return config
 }
-var saveMangoConfig = function (config) {
+var saveConfig = function (config) {
 	jf.writeFile(CONFIG_PATH, config, function (err) {
 		if(err) log.error(err)
 	})
@@ -40,10 +39,9 @@ program
 	.description('initialize a new project')
 	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
 	.action(function init(directory, options) {
-		var mango = new Mango()
-		var dir = path.resolve(process.cwd(), directory || '.')
+		var mango = new Mango(path.resolve(process.cwd(), directory || '.'), {})
 		var source = options.source || pkg.config.default_fork_repo
-		mango.init(dir, null, source)
+		mango.init(source)
 	})
 
 program
@@ -51,24 +49,22 @@ program
 	.alias('i')
 	.description('NPM install of passed packages and dependencies specified in config')
 	.action(function install(packages) {
-		var mango = new Mango()
-		var dir = process.cwd()
-		var config = getMangoConfig()
+		var config = getConfig()
 		if(packages) {
+			if(!config.dependencies) config.dependencies = []
 			config.dependencies = config.dependencies.concat(packages)
-			saveMangoConfig(config)
+			saveConfig(config)
 		}
-		mango.install(dir, config)
+		var mango = new Mango(process.cwd(), config)
+		mango.install()
 	})
 
 program
 	.command('build [tasks...]')
 	.description('build project assets for production')
 	.action(function build(tasks) {
-		var mango = new Mango()
-		var dir = process.cwd()
-		var config = getMangoConfig()
-		mango.build(dir, config, tasks)
+		var mango = new Mango(process.cwd(), getConfig())
+		mango.build(tasks)
 	})
 
 program
@@ -76,10 +72,8 @@ program
 	.description('start a development mode and watch for assets change')
 	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
 	.action(function (options) {
-		var mango = new Mango()
-		var dir = process.cwd()
-		var config = getMangoConfig()
-		mango.dev(dir, config, options.http_proxy)
+		var mango = new Mango(process.cwd(), getConfig())
+		mango.dev(options.http_proxy)
 	})
 
 program.parse(process.argv)
