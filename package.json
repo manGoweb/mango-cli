@@ -52,7 +52,9 @@
     "nib": "^1.0.4",
     "npm": "^2.1.8",
     "reactify": "^0.16.0",
-    "vinyl-transform": "0.0.1"
+    "vinyl-transform": "0.0.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-notify": "^2.0.1"
   },
   "config": {
     "default_fork_repo": "git@github.com:manGoweb/WordPress-boilerplate.git"
