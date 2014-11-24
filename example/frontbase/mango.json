@@ -1,31 +1,25 @@
 {
-	"styles": [
-		"styles/screen.styl"
-	],
-
-	"scripts": [
-		"js/index.js",
-		"js/ie8.js"
-	],
-
-	"images": [
-		"img/**/*.{jpg,png,svg}"
-	],
-
-	"templates": [
-		"templates/**/*.jade",
-		"!**/_*.jade"
-	],
-
-	"dependencies": [
-		"lt-ie-9",
-		"jquery",
-		"react"
-	],
-
-	"watch": [
-		"app/**"
-	],
-
-	"dist_folder": "dist"
+  "styles": [
+    "styles/screen.styl"
+  ],
+  "scripts": [
+    "js/index.js",
+    "js/ie8.js"
+  ],
+  "images": [
+    "img/**/*.{jpg,png,svg}"
+  ],
+  "templates": [
+    "templates/**/*.jade",
+    "!**/_*.jade"
+  ],
+  "dependencies": [
+    "lt-ie-9",
+    "jquery",
+    "react"
+  ],
+  "watch": [
+    "app/**"
+  ],
+  "dist_folder": "dist"
 }
