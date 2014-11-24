@@ -73,7 +73,7 @@ program
 	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
 	.action(function (options) {
 		var mango = new Mango(process.cwd(), getConfig())
-		mango.dev(options.http_proxy)
+		mango.dev(options.proxy)
 	})
 
 program.parse(process.argv)
