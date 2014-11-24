@@ -57,6 +57,6 @@
     "gulp-notify": "^2.0.1"
   },
   "config": {
-    "default_fork_repo": "git@github.com:manGoweb/WordPress-boilerplate.git"
+    "default_fork_repo": "git@github.com:manGoweb/MangoPress.git"
   }
 }
