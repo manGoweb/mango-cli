@@ -1,4 +1,4 @@
-mango-cli
+mango-cli [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg)](https://travis-ci.org/manGoweb/mango-cli)
 =========
 
 Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.
