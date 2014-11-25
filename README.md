@@ -75,10 +75,13 @@ Assuming the config file `mango.json` is present in a current directory and cont
 		"scripts/index.js"
 	],
 	"images": [
-		"img/**/*.{jpg,png,svg}"
+		"images/**/*.{jpg,png,svg}"
 	],
 	"templates": [
 		"templates/**/*.jade",
+	],
+	"static": [
+		"fonts/**"
 	],
 	"dependencies": [
 		"jquery"
@@ -100,7 +103,7 @@ mango build [tasks...]
 All assets are compiled and minified into `dist_folder`, ready for production use.
 
 Options:
-* `[tasks...]` - run only specified tasks as `styles`, `scripts`, `images`, `templates`
+* `[tasks...]` - run only specified tasks as `styles`, `scripts`, `images`, `templates`, `static`
 
 
 #### Development mode
