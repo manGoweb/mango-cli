@@ -53,6 +53,7 @@
     "gulp-watch": "^2.0.0",
     "imagemin-pngquant": "^4.0.0",
     "jsonfile": "^2.0.0",
+    "minimatch": "^1.0.0",
     "nib": "^1.0.4",
     "npm": "^2.1.8",
     "reactify": "^0.16.0",
