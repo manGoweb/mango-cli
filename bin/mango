@@ -24,8 +24,15 @@ var config_defaults = {
 var getConfig = function() {
 	var k
 	var config = {}
-	var config_main = jf.readFileSync(CONFIG_PATH, { throws: false })
-	var config_local = jf.readFileSync(CONFIG_LOCAL_PATH, { throws: false })
+	var config_main
+	var config_local
+
+	try {
+		config_main = jf.readFileSync(CONFIG_PATH, { throws: true })
+		config_local = jf.readFileSync(CONFIG_LOCAL_PATH, { throws: true })
+	} catch(e){
+		log.error('Config file in invalid format: ', e.message)
+	}
 
 	if(!config_main){
 		log.error('Cannot load the config file mango.json')
