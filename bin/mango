@@ -29,7 +29,7 @@ var getConfig = function() {
 
 	try {
 		config_main = jf.readFileSync(CONFIG_PATH, { throws: true })
-		config_local = jf.readFileSync(CONFIG_LOCAL_PATH, { throws: true })
+		config_local = jf.readFileSync(CONFIG_LOCAL_PATH, { throws: false })
 	} catch(e){
 		log.error('Config file in invalid format: ', e.message)
 	}
