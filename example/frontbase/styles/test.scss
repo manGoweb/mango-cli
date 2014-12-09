@@ -1,0 +1,9 @@
+$test: 24px;
+
+.test {
+	width: $test;
+
+	&-sub {
+		background: #FFF;
+	}
+}

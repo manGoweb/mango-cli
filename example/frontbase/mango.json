@@ -1,6 +1,7 @@
 {
   "styles": [
-    "styles/screen.styl"
+    "styles/screen.styl",
+    "styles/test.scss"
   ],
   "scripts": [
     "js/index.js",
