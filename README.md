@@ -5,19 +5,28 @@ Scaffold and build your projects way more faster than before. Preconfigured fron
 
 ## Under the hood
 
-* [Stylus](http://learnboost.github.io/stylus) - expressive, robust, feature-rich CSS preprocessor
-* [Jade](http://jade-lang.com) - robust, elegant and feature rich template engine
-* [React](http://facebook.github.io/react) - JavaScript library for building user interfaces from Facebook
-* [CoffeeScript](http://coffeescript.org) - little language that compiles into JavaScript
-* [Browserify](http://browserify.org) - JavaScript bundling with require() in the browser
-* [BrowserSync](http://www.browsersync.io) - Time-saving synchronised browser testing
-* [NPM](https://www.npmjs.org) - Node.js package manager
-* [Gulp](http://gulpjs.com/) - Automated build tasks
-* [UglifyJS](http://lisperator.net/uglifyjs) - JavaScript minifier
-* [Clean-CSS](https://github.com/jakubpawlowicz/clean-css) - Fast and efficient CSS minifier
-* [Imagemin](https://github.com/imagemin/imagemin) - Seamless image minification
-* [Sourcemaps](https://github.com/floridoo/gulp-sourcemaps) - debug like a pro
+<table>
+<tr><th colspan=2 align=left>Styles</th></tr>
+<tr><td><a href="http://learnboost.github.io/stylus">Stylus</a></td><td>expressive, robust, feature-rich CSS preprocessor</td></tr>
+<tr><td><a href="https://github.com/sass/libsass">Sass</a></td><td>CSS with superpowers</td></tr>
+<tr><td><a href="https://github.com/jakubpawlowicz/clean-css">Clean-CSS</a></td><td>Fast and efficient CSS minifier</td></tr>
 
+<tr><th colspan=2 align=left>Templates</th></tr>
+<tr><td><a href="http://jade-lang.com">Jade</a></td><td>robust, elegant and feature rich template engine</td></tr>
+
+<tr><th colspan=2 align=left>Scripts</th></tr>
+<tr><td><a href="http://facebook.github.io/react">React</a></td><td>JavaScript library for building user interfaces from Facebook</td></tr>
+<tr><td><a href="http://coffeescript.org">CoffeeScript</a></td><td>little language that compiles into JavaScript</td></tr>
+<tr><td><a href="http://browserify.org">Browserify</a></td><td>JavaScript bundling with require() in the browser</td></tr>
+<tr><td><a href="http://lisperator.net/uglifyjs">UglifyJS</a></td><td>JavaScript minifier</td></tr>
+
+<tr><th colspan=2 align=left>Tools</th></tr>
+<tr><td><a href="http://www.browsersync.io">BrowserSync</a></td><td>Time-saving synchronised browser testing</td></tr>
+<tr><td><a href="https://www.npmjs.org">NPM</a></td><td>Node.js package manager</td></tr>
+<tr><td><a href="http://gulpjs.com/">Gulp</a></td><td>Automated build tasks</td></tr>
+<tr><td><a href="https://github.com/imagemin/imagemin">Imagemin</a></td><td>Seamless image minification</td></tr>
+<tr><td><a href="https://github.com/floridoo/gulp-sourcemaps">Sourcemaps</a></td><td>debug like a pro</td></tr>
+</table>
 
 ## Installation
 
