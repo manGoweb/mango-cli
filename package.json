@@ -60,7 +60,8 @@
     "npm": "^2.1.11",
     "reactify": "^0.17.1",
     "run-sequence": "^1.0.2",
-    "vinyl-transform": "^1.0.0"
+    "vinyl-transform": "^1.0.0",
+    "patternlab-node": "git://github.com/enzy/patternlab-node.git#master"
   },
   "config": {
     "default_fork_repo": "https://github.com/frontbase/Frontbase.git"
