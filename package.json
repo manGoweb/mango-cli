@@ -9,6 +9,7 @@
   "bin": {
     "mango": "bin/mango"
   },
+  "preferglobal": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/manGoweb/mango-cli.git"
