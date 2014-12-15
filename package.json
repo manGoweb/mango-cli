@@ -15,12 +15,25 @@
     "url": "https://github.com/manGoweb/mango-cli.git"
   },
   "keywords": [
-    "frontend",
-    "scaffolding",
-    "generator",
+    "browserify",
+    "browsersync",
     "build",
+    "clean-css",
+    "coffeescript",
+    "frontend",
+    "generator",
     "gulp",
-    "stylus"
+    "imagemin",
+    "jade",
+    "mango",
+    "mangoweb",
+    "patternlab",
+    "react",
+    "sass",
+    "scaffolding",
+    "sourcemaps",
+    "stylus",
+    "uglifyjs"
   ],
   "author": "manGoweb s.r.o. <info@mangoweb.cz> (www.mangoweb.cz)",
   "contributors": [
