@@ -75,7 +75,7 @@
     "reactify": "^0.17.1",
     "run-sequence": "^1.0.2",
     "vinyl-transform": "^1.0.0",
-    "patternlab-node": "git://github.com/enzy/patternlab-node.git#master"
+    "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.2.0"
   },
   "config": {
     "default_fork_repo": "https://github.com/frontbase/Frontbase.git"
