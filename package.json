@@ -76,6 +76,7 @@
     "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.3.0",
     "reactify": "^0.17.1",
     "run-sequence": "^1.0.2",
+    "semver": "^4.2.0",
     "vinyl-transform": "^1.0.0"
   },
   "config": {
