@@ -76,7 +76,11 @@ program
 	.action(function init(directory, options) {
 		var mango = new Mango(path.resolve(process.cwd(), directory || '.'), {})
 		var source = options.source || pkg.config.default_fork_repo
-		mango.init(source)
+		log.time('~ initialization time')
+		mango.init(source, function() {
+			log.timeEnd('~ initialization time')
+			log.info('/>')
+		})
 	})
 
 program
@@ -91,7 +95,11 @@ program
 			saveConfig(config)
 		}
 		var mango = new Mango(process.cwd(), config)
-		mango.install(noop)
+		log.time('~ installation time')
+		mango.install(function() {
+			log.timeEnd('~ installation time')
+			log.info('/>')
+		})
 	})
 
 program
@@ -99,7 +107,11 @@ program
 	.description('build project assets for production')
 	.action(function build(tasks) {
 		var mango = new Mango(process.cwd(), getConfig())
-		mango.build(tasks, noop)
+		log.time('~ compilation time')
+		mango.build(tasks, function() {
+			log.timeEnd('~ compilation time')
+			log.info('/>')
+		})
 	})
 
 program
@@ -108,7 +120,9 @@ program
 	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
 	.action(function (options) {
 		var mango = new Mango(process.cwd(), getConfig())
-		mango.dev(options.proxy, noop)
+		mango.dev(options.proxy, function() {
+			log.info('/>')
+		})
 	})
 
 program.parse(process.argv)
