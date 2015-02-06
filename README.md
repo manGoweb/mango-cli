@@ -1,7 +1,13 @@
 mango-cli [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli)
 =========
 
+[mangoweb.github.io/mango](mangoweb.github.io/mango)
+
 Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.
+
+**A little example project** is here: [manGoweb/mango-cli-example](https://github.com/mangoweb/mango-cli-example).
+
+If you already have `mango-cli` you can init the example project simply by `mango init [your-directory]`
 
 ## Under the hood
 
