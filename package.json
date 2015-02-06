@@ -47,7 +47,7 @@
   "homepage": "https://github.com/manGoweb/mango-cli",
   "dependencies": {
     "better-console": "^0.2.3",
-    "browser-sync": "^1.7.2",
+    "browser-sync": "^1.9.1",
     "browserify": "^7.1.0",
     "chokidar": "^0.12.6",
     "coffeeify": "^1.0.0",
@@ -76,15 +76,15 @@
     "jsonfile": "^2.0.0",
     "minimatch": "^2.0.1",
     "nib": "^1.0.4",
-    "npm": "^2.3.0",
-    "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.3.0",
+    "npm": "^2.5.1",
+    "patternlab-node": "file:C:\\Users\\Viliam\\AppData\\Local\\Temp\\npm-63144-fe5690cd\\git-cache-6ac41ac8c45e\\d42529d275506e79d75dab3e13d9ede257acba16",
     "reactify": "^1.0.0",
     "run-sequence": "^1.0.2",
     "semver": "^4.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
     "vinyl-transform": "^1.0.0",
-    "watchify": "^2.2.1"
+    "watchify": "^2.3.0"
   },
   "config": {
     "default_fork_repo": "https://github.com/mangoweb/mango-cli-example.git"
