@@ -81,7 +81,7 @@
     "reactify": "^1.0.0",
     "run-sequence": "^1.0.2",
     "semver": "^4.3.3",
-    "vinyl-transform": "^1.0.0"
+    "through2": "^0.6.3"
   },
   "config": {
     "default_fork_repo": "https://github.com/mangoweb/mango-cli-example.git"
