@@ -74,6 +74,7 @@
     "node-notifier": "^4.1.2",
     "npm": "^2.7.4",
     "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.3.0",
+    "react-tools": "^0.13.2",
     "run-sequence": "^1.0.2",
     "semver": "^4.3.3",
     "webmake": "^0.3.39",
