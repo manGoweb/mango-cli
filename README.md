@@ -25,7 +25,7 @@ If you already have `mango-cli` you can init the example project simply by `mang
 <tr><th colspan=2 align=left>Scripts</th></tr>
 <tr><td><a href="http://facebook.github.io/react">React</a></td><td>JavaScript library for building user interfaces from Facebook</td></tr>
 <tr><td><a href="http://coffeescript.org">CoffeeScript</a></td><td>little language that compiles into JavaScript</td></tr>
-<tr><td><a href="http://browserify.org">Browserify</a></td><td>JavaScript bundling with require() in the browser</td></tr>
+<tr><td><a href="https://github.com/medikoo/modules-webmake">Webmake</a></td><td>JavaScript bundling with require() in the browser</td></tr>
 <tr><td><a href="http://lisperator.net/uglifyjs">UglifyJS</a></td><td>JavaScript minifier</td></tr>
 
 <tr><th colspan=2 align=left>Tools</th></tr>

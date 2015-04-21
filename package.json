@@ -48,14 +48,9 @@
   "dependencies": {
     "better-console": "^0.2.3",
     "browser-sync": "^2.5.0",
-    "browserify": "^9.0.3",
     "chokidar": "^0.12.6",
-    "coffeeify": "^1.0.0",
     "commander": "^2.5.0",
-    "deamdify": "^0.1.1",
-    "deglobalify": "^0.2.0",
     "del": "^1.1.0",
-    "envify": "^3.2.0",
     "gift": "^0.5.0",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",
@@ -70,6 +65,7 @@
     "gulp-stylus": "^2.0.0",
     "gulp-uglify": "^1.0.2",
     "gulp-util": "^3.0.2",
+    "gulp-webmake": "0.0.4",
     "imagemin-pngquant": "^4.0.0",
     "jade": "^1.9.1",
     "jsonfile": "^2.0.0",
@@ -78,10 +74,10 @@
     "node-notifier": "^4.1.2",
     "npm": "^2.7.4",
     "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.3.0",
-    "reactify": "^1.0.0",
     "run-sequence": "^1.0.2",
     "semver": "^4.3.3",
-    "through2": "^0.6.3"
+    "webmake": "^0.3.39",
+    "webmake-coffee": "^0.1.4"
   },
   "config": {
     "default_fork_repo": "https://github.com/mangoweb/mango-cli-example.git"
