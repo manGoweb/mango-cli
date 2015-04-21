@@ -15,6 +15,7 @@ If you already have `mango-cli` you can init the example project simply by `mang
 <tr><th colspan=2 align=left>Styles</th></tr>
 <tr><td><a href="http://learnboost.github.io/stylus">Stylus</a></td><td>expressive, robust, feature-rich CSS preprocessor</td></tr>
 <tr><td><a href="https://github.com/sass/libsass">Sass</a></td><td>CSS with superpowers</td></tr>
+<tr><td><a href="http://lesscss.org">Less</a></td><td>the dynamic stylesheet language</td></tr>
 <tr><td><a href="https://github.com/postcss/autoprefixer">Autoprefixer </a></td><td>vendor prefixes based on the real usage</td></tr>
 <tr><td><a href="https://github.com/jakubpawlowicz/clean-css">Clean-CSS</a></td><td>Fast and efficient CSS minifier</td></tr>
 
