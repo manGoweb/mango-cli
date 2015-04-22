@@ -21,6 +21,7 @@ If you already have `mango-cli` you can init the example project simply by `mang
 
 <tr><th colspan=2 align=left>Templates</th></tr>
 <tr><td><a href="http://jade-lang.com">Jade</a></td><td>robust, elegant and feature rich template engine</td></tr>
+<tr><td><a href="http://handlebarsjs.com/">Handlebars</a></td><td>build semantic templates effectively with no frustration</td></tr>
 
 <tr><th colspan=2 align=left>Scripts</th></tr>
 <tr><td><a href="http://facebook.github.io/react">React</a></td><td>JavaScript library for building user interfaces from Facebook</td></tr>
