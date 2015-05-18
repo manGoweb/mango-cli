@@ -59,6 +59,13 @@ var getConfig = function() {
 	return config
 }
 var saveConfig = function (config) {
+	// Filter out null values
+	for(var prop in config){
+		if(config.hasOwnProperty(prop) && !config[prop]){
+			delete config[prop];
+		}
+	}
+	// Write to file
 	jf.writeFile(CONFIG_PATH, config, function (err) {
 		if(err) log.error(err)
 	})
