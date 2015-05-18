@@ -63,7 +63,19 @@ var saveConfig = function (config) {
 		if(err) log.error(err)
 	})
 }
-
+var checkError = function(error) {
+	if(error !== null) {
+		console.error(error.toString())
+		process.exit(1)
+	}
+}
+var runcmd = function(cmd) {
+	var exec = require('child_process').exec
+	exec(cmd, function puts(error, stdout, stderr) {
+		console.log(stdout)
+		checkError(error)
+	})
+}
 var noop = function() {}
 
 program
@@ -74,11 +86,18 @@ program
 	.description('initialize a new project')
 	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
 	.action(function init(directory, options) {
-		var mango = new Mango(path.resolve(process.cwd(), directory || '.'), {})
+		var config = getConfig()
+		var mango = new Mango(path.resolve(process.cwd(), directory || '.'), config)
 		var source = options.source || pkg.config.default_fork_repo
 		log.time('~ initialization time')
-		mango.init(source, function() {
+
+		mango.init(source, function(err) {
 			log.timeEnd('~ initialization time')
+			checkError(err)
+			if(config.hooks && config.hooks.init) {
+				log.info('~ init hook: ' + config.hooks.init)
+				runcmd(config.hooks.init)
+			}
 			log.info('/>')
 		})
 	})
@@ -96,8 +115,14 @@ program
 		}
 		var mango = new Mango(process.cwd(), config)
 		log.time('~ installation time')
-		mango.install(function() {
+
+		mango.install(function(err) {
 			log.timeEnd('~ installation time')
+			checkError(err)
+			if(config.hooks && config.hooks.install) {
+				log.info('~ install hook: ' + config.hooks.install)
+				runcmd(config.hooks.install)
+			}
 			log.info('/>')
 		})
 	})
@@ -106,10 +131,17 @@ program
 	.command('build [tasks...]')
 	.description('build project assets for production')
 	.action(function build(tasks) {
-		var mango = new Mango(process.cwd(), getConfig())
+		var config = getConfig()
+		var mango = new Mango(process.cwd(), config)
 		log.time('~ compilation time')
-		mango.build(tasks, function() {
+
+		mango.build(tasks, function(err) {
 			log.timeEnd('~ compilation time')
+			checkError(err)
+			if(config.hooks && config.hooks.build) {
+				log.info('~ build hook: ' + config.hooks.build)
+				runcmd(config.hooks.build)
+			}
 			log.info('/>')
 		})
 	})
@@ -119,8 +151,15 @@ program
 	.description('start a development mode and watch for assets change')
 	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
 	.action(function (options) {
-		var mango = new Mango(process.cwd(), getConfig())
-		mango.dev(options.proxy, function() {
+		var config = getConfig()
+		var mango = new Mango(process.cwd(), config)
+
+		mango.dev(options.proxy, function(err) {
+			checkError(err)
+			if(config.hooks && config.hooks.dev) {
+				log.info('~ dev hook: ' + config.hooks.dev)
+				runcmd(config.hooks.dev)
+			}
 			log.info('/>')
 		})
 	})
