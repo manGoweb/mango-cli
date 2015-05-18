@@ -71,7 +71,7 @@ var saveConfig = function (config) {
 	})
 }
 var checkError = function(error) {
-	if(error !== null) {
+	if(error) {
 		console.error(error.toString())
 		process.exit(1)
 	}
