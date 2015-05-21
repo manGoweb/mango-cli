@@ -5,6 +5,8 @@ var pkg = require('../package.json')
 var program = require('commander')
 var jf = require('jsonfile')
 var log = require('better-console')
+var checkError = require('../lib/helpers/checkerror')
+var runcmd = require('../lib/helpers/runcmd')
 
 var CONFIG_PATH = path.resolve(process.cwd(), 'mango.json')
 var CONFIG_LOCAL_PATH = path.resolve(process.cwd(), 'mango.local.json')
@@ -68,19 +70,6 @@ var saveConfig = function (config) {
 	// Write to file
 	jf.writeFile(CONFIG_PATH, config, function (err) {
 		if(err) log.error(err)
-	})
-}
-var checkError = function(error) {
-	if(error) {
-		console.error(error.toString())
-		process.exit(1)
-	}
-}
-var runcmd = function(cmd) {
-	var exec = require('child_process').exec
-	exec(cmd, function puts(error, stdout, stderr) {
-		console.log(stdout)
-		checkError(error)
 	})
 }
 var noop = function() {}
