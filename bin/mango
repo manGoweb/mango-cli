@@ -8,8 +8,8 @@ var log = require('better-console')
 var checkError = require('../lib/helpers/checkerror')
 var runcmd = require('../lib/helpers/runcmd')
 
-var CONFIG_PATH = path.resolve(process.cwd(), 'mango.json')
-var CONFIG_LOCAL_PATH = path.resolve(process.cwd(), 'mango.local.json')
+var CONFIG_FILENAME = 'mango.json'
+var CONFIG_FILENAME_LOCAL = 'mango.local.json'
 
 var config_defaults = {
 	"src_folder": ".",
@@ -23,15 +23,16 @@ var config_defaults = {
 	"watch": null
 }
 
-var getConfig = function() {
+var getConfig = function(dir) {
+	dir = dir || process.cwd()
 	var k
 	var config = {}
 	var config_main
 	var config_local
 
 	try {
-		config_main = jf.readFileSync(CONFIG_PATH, { throws: true })
-		config_local = jf.readFileSync(CONFIG_LOCAL_PATH, { throws: false })
+		config_main = jf.readFileSync(path.resolve(dir, CONFIG_FILENAME), { throws: true })
+		config_local = jf.readFileSync(path.resolve(dir, CONFIG_FILENAME_LOCAL), { throws: false })
 	} catch(e){
 		log.error('Config file in invalid format: ', e.message)
 	}
@@ -60,7 +61,8 @@ var getConfig = function() {
 	}
 	return config
 }
-var saveConfig = function (config) {
+var saveConfig = function (config, dir) {
+	dir = dir || process.cwd()
 	// Filter out null values
 	for(var prop in config){
 		if(config.hasOwnProperty(prop) && !config[prop]){
@@ -68,7 +70,7 @@ var saveConfig = function (config) {
 		}
 	}
 	// Write to file
-	jf.writeFile(CONFIG_PATH, config, function (err) {
+	jf.writeFile(path.resolve(dir, CONFIG_FILENAME), config, function (err) {
 		if(err) log.error(err)
 	})
 }
@@ -82,17 +84,19 @@ program
 	.description('initialize a new project')
 	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
 	.action(function init(directory, options) {
-		var config = getConfig()
-		var mango = new Mango(path.resolve(process.cwd(), directory || '.'), config)
+		var dir = path.resolve(process.cwd(), directory || '.')
+		var mango = new Mango(dir)
 		var source = options.source || pkg.config.default_fork_repo
 		log.time('~ initialization time')
 
 		mango.init(source, function(err) {
 			log.timeEnd('~ initialization time')
 			checkError(err)
+
+			var config = getConfig(dir)
 			if(config.hooks && config.hooks.init) {
 				log.info('~ init hook: ' + config.hooks.init)
-				runcmd(config.hooks.init)
+				runcmd(config.hooks.init, dir)
 			}
 			log.info('/>')
 		})
