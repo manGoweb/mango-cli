@@ -23,5 +23,12 @@
   "watch": [
     "app/**"
   ],
+  "data": {
+    "external": "data/default.json",
+    "any": {
+      "other": "objects"
+    },
+    "or": "values"
+  },
   "dist_folder": "dist"
 }
