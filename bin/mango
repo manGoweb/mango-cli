@@ -70,6 +70,7 @@ var saveConfig = function (config, dir) {
 		}
 	}
 	// Write to file
+	jf.spaces = 2 // set proper formatting
 	jf.writeFile(path.resolve(dir, CONFIG_FILENAME), config, function (err) {
 		if(err) log.error(err)
 	})
