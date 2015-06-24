@@ -130,6 +130,7 @@ program
 
 program
 	.command('build [tasks...]')
+	.alias('b')
 	.description('build project assets for production')
 	.action(function build(tasks) {
 		var config = getConfig()
@@ -149,6 +150,7 @@ program
 
 program
 	.command('dev')
+	.alias('d')
 	.description('start a development mode and watch for assets change')
 	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
 	.action(function (options) {
