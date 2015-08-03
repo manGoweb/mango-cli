@@ -1,81 +1,14 @@
 #!/usr/bin/env node
+var checkError = require('../lib/helpers/checkerror')
+var Config = require('../lib/helpers/config')
+var log = require('better-console')
 var Mango = require('../lib/mango')
 var path = require('path')
 var pkg = require('../package.json')
 var program = require('commander')
-var jf = require('jsonfile')
-var log = require('better-console')
-var checkError = require('../lib/helpers/checkerror')
 var runcmd = require('../lib/helpers/runcmd')
 var unique = require('../lib/helpers/unique')
 
-var CONFIG_FILENAME = 'mango.json'
-var CONFIG_FILENAME_LOCAL = 'mango.local.json'
-
-var config_defaults = {
-	"src_folder": ".",
-	"dist_folder": "dist",
-	"styles": null,
-	"scripts": null,
-	"images": null,
-	"static": null,
-	"templates": null,
-	"dependencies": null,
-	"watch": null
-}
-
-var getConfig = function(dir) {
-	dir = dir || process.cwd()
-	var k
-	var config = {}
-	var config_main
-	var config_local
-
-	try {
-		config_main = jf.readFileSync(path.resolve(dir, CONFIG_FILENAME), { throws: true })
-		config_local = jf.readFileSync(path.resolve(dir, CONFIG_FILENAME_LOCAL), { throws: false })
-	} catch(e){
-		log.error('Config file in invalid format: ', e.message)
-	}
-
-	if(!config_main){
-		log.error('Cannot load the config file mango.json')
-		process.exit(1)
-	}
-
-	if(config_defaults) {
-		for(k in config_defaults) {
-			config[k] = config_defaults[k]
-		}
-	}
-
-	if(config_main) {
-		for(k in config_main) {
-			config[k] = config_main[k]
-		}
-	}
-
-	if(config_local) {
-		for(k in config_local) {
-			config[k] = config_local[k]
-		}
-	}
-	return config
-}
-var saveConfig = function (config, dir) {
-	dir = dir || process.cwd()
-	// Filter out null values
-	for(var prop in config){
-		if(config.hasOwnProperty(prop) && !config[prop]){
-			delete config[prop];
-		}
-	}
-	// Write to file
-	jf.spaces = 2 // set proper formatting
-	jf.writeFile(path.resolve(dir, CONFIG_FILENAME), config, function (err) {
-		if(err) log.error(err)
-	})
-}
 var noop = function() {}
 
 program
@@ -95,7 +28,7 @@ program
 			log.timeEnd('~ initialization time')
 			checkError(err)
 
-			var config = getConfig(dir)
+			var config = new Config(dir).get()
 			if(config.hooks && config.hooks.init) {
 				log.info('~ init hook: ' + config.hooks.init)
 				runcmd(config.hooks.init, dir)
@@ -111,13 +44,14 @@ program
 	.action(function install(packages) {
 		log.time('~ installation time')
 		var dir = process.cwd()
-		var config = getConfig()
+		var config = new Config()
+		var config_value = config.get()
 
 		var onFinish = function() {
 			log.timeEnd('~ installation time')
-			if(config.hooks && config.hooks.install) {
-				log.info('~ install hook: ' + config.hooks.install)
-				runcmd(config.hooks.install)
+			if(config_value.hooks && config_value.hooks.install) {
+				log.info('~ install hook: ' + config_value.hooks.install)
+				runcmd(config_value.hooks.install)
 			}
 			log.info('/>')
 		}
@@ -129,15 +63,15 @@ program
 
 			mango.install(function(err) {
 				checkError(err)
-				if(!config.dependencies) config.dependencies = []
-				config.dependencies = unique(config.dependencies.concat(packages))
-				saveConfig(config)
+				if(!config_value.dependencies) config_value.dependencies = []
+				config_value.dependencies = unique(config_value.dependencies.concat(packages))
+				config.save(config_value)
 				onFinish()
 			})
 		}
 		// Install packages specifies in mango.json
 		else {
-			var mango = new Mango(dir, config)
+			var mango = new Mango(dir, config_value)
 			mango.install(function(err) {
 				checkError(err)
 				onFinish()
@@ -151,7 +85,7 @@ program
 	.alias('b')
 	.description('build project assets for production')
 	.action(function build(tasks) {
-		var config = getConfig()
+		var config = new Config().get()
 		var mango = new Mango(process.cwd(), config)
 		log.time('~ compilation time')
 
@@ -172,7 +106,7 @@ program
 	.description('start a development mode and watch for assets change')
 	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
 	.action(function (options) {
-		var config = getConfig()
+		var config = new Config().get()
 		var mango = new Mango(process.cwd(), config)
 
 		mango.dev(options.proxy, function(err) {
