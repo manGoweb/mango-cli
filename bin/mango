@@ -9,8 +9,6 @@ var program = require('commander')
 var runcmd = require('../lib/helpers/runcmd')
 var unique = require('../lib/helpers/unique')
 
-var noop = function() {}
-
 program
 	.version(pkg.version)
 
