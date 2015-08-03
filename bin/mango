@@ -43,13 +43,14 @@ program
 		log.time('~ installation time')
 		var dir = process.cwd()
 		var config = new Config()
-		var config_value = config.get()
+		var mainconfig = config.get(true)
+		var fullconfig = config.get()
 
 		var onFinish = function() {
 			log.timeEnd('~ installation time')
-			if(config_value.hooks && config_value.hooks.install) {
-				log.info('~ install hook: ' + config_value.hooks.install)
-				runcmd(config_value.hooks.install)
+			if(fullconfig.hooks && fullconfig.hooks.install) {
+				log.info('~ install hook: ' + fullconfig.hooks.install)
+				runcmd(fullconfig.hooks.install)
 			}
 			log.info('/>')
 		}
@@ -61,15 +62,15 @@ program
 
 			mango.install(function(err) {
 				checkError(err)
-				if(!config_value.dependencies) config_value.dependencies = []
-				config_value.dependencies = unique(config_value.dependencies.concat(packages))
-				config.save(config_value)
+				if(!mainconfig.dependencies) mainconfig.dependencies = []
+				mainconfig.dependencies = unique(mainconfig.dependencies.concat(packages))
+				config.save(mainconfig)
 				onFinish()
 			})
 		}
 		// Install packages specifies in mango.json
 		else {
-			var mango = new Mango(dir, config_value)
+			var mango = new Mango(dir, fullconfig)
 			mango.install(function(err) {
 				checkError(err)
 				onFinish()
