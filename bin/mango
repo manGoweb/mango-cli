@@ -7,6 +7,7 @@ var jf = require('jsonfile')
 var log = require('better-console')
 var checkError = require('../lib/helpers/checkerror')
 var runcmd = require('../lib/helpers/runcmd')
+var unique = require('../lib/helpers/unique')
 
 var CONFIG_FILENAME = 'mango.json'
 var CONFIG_FILENAME_LOCAL = 'mango.local.json'
@@ -106,26 +107,43 @@ program
 program
 	.command('install [packages...]')
 	.alias('i')
-	.description('NPM install of passed packages and dependencies specified in config')
+	.description('NPM install of passed packages or dependencies specified in config')
 	.action(function install(packages) {
-		var config = getConfig()
-		if(packages) {
-			if(!config.dependencies) config.dependencies = []
-			config.dependencies = config.dependencies.concat(packages)
-			saveConfig(config)
-		}
-		var mango = new Mango(process.cwd(), config)
 		log.time('~ installation time')
+		var dir = process.cwd()
+		var config = getConfig()
 
-		mango.install(function(err) {
+		var onFinish = function() {
 			log.timeEnd('~ installation time')
-			checkError(err)
 			if(config.hooks && config.hooks.install) {
 				log.info('~ install hook: ' + config.hooks.install)
 				runcmd(config.hooks.install)
 			}
 			log.info('/>')
-		})
+		}
+
+		// Install only passed packages and update mango.json
+		if(packages.length > 0) {
+			var _config = { dependencies: packages }
+			var mango = new Mango(dir, _config)
+
+			mango.install(function(err) {
+				checkError(err)
+				if(!config.dependencies) config.dependencies = []
+				config.dependencies = unique(config.dependencies.concat(packages))
+				saveConfig(config)
+				onFinish()
+			})
+		}
+		// Install packages specifies in mango.json
+		else {
+			var mango = new Mango(dir, config)
+			mango.install(function(err) {
+				checkError(err)
+				onFinish()
+			})
+		}
+
 	})
 
 program
