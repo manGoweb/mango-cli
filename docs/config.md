@@ -45,6 +45,13 @@ All options can be overridden in `mango.local.json` file. Handy for development 
 
 ---
 
+### BrowserSync
+
+* `browsersync` - options passed to [BrowserSync](http://www.browsersync.io/docs/options/) dev server
+* `proxy` - start dev server in [proxy mode](http://www.browsersync.io/docs/options/#option-proxy)
+
+---
+
 ### Styles
 
 * `autoprefixer` - options passed to CSS [Autoprefixer](https://github.com/postcss/autoprefixer-core#usage)
