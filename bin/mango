@@ -29,9 +29,12 @@ program
 			var config = new Config(dir).get()
 			if(config.hooks && config.hooks.init) {
 				log.info('~ init hook: ' + config.hooks.init)
-				runcmd(config.hooks.init, dir)
+				runcmd(config.hooks.init, dir, function() {
+					log.info('/>')
+				})
+			} else {
+				log.info('/>')
 			}
-			log.info('/>')
 		})
 	})
 
@@ -40,7 +43,6 @@ program
 	.alias('i')
 	.description('NPM install of passed packages or dependencies specified in config')
 	.action(function install(packages) {
-		log.time('~ installation time')
 		var dir = process.cwd()
 		var config = new Config()
 		var mainconfig = config.get(true)
@@ -50,31 +52,48 @@ program
 			log.timeEnd('~ installation time')
 			if(fullconfig.hooks && fullconfig.hooks.install) {
 				log.info('~ install hook: ' + fullconfig.hooks.install)
-				runcmd(fullconfig.hooks.install)
+				runcmd(fullconfig.hooks.install, null, function() {
+					log.info('/>')
+				})
+			} else {
+				log.info('/>')
 			}
-			log.info('/>')
 		}
 
-		// Install only passed packages and update mango.json
-		if(packages.length > 0) {
-			var _config = { dependencies: packages }
-			var mango = new Mango(dir, _config)
+		var doInstall = function() {
+			log.time('~ installation time')
+			// Install only passed packages and update mango.json
+			if(packages.length > 0) {
+				var _config = { dependencies: packages }
+				var mango = new Mango(dir, _config)
 
-			mango.install(function(err) {
-				checkError(err)
-				if(!mainconfig.dependencies) mainconfig.dependencies = []
-				mainconfig.dependencies = unique(mainconfig.dependencies.concat(packages))
-				config.save(mainconfig)
-				onFinish()
-			})
+				mango.install(function(err) {
+					checkError(err)
+					if(!mainconfig.dependencies) mainconfig.dependencies = []
+					mainconfig.dependencies = unique(mainconfig.dependencies.concat(packages))
+					config.save(mainconfig)
+					onFinish()
+				})
+			}
+			// Install packages specifies in mango.json
+			else {
+				var mango = new Mango(dir, fullconfig)
+				mango.install(function(err) {
+					checkError(err)
+					onFinish()
+				})
+			}
 		}
-		// Install packages specifies in mango.json
+
+
+		// Run preinstall hook first
+		if(fullconfig.hooks && fullconfig.hooks.preinstall) {
+			log.info('~ preinstall hook: ' + fullconfig.hooks.preinstall)
+			runcmd(fullconfig.hooks.preinstall, null, doInstall)
+		}
+		// Run immediately
 		else {
-			var mango = new Mango(dir, fullconfig)
-			mango.install(function(err) {
-				checkError(err)
-				onFinish()
-			})
+			doInstall()
 		}
 
 	})
@@ -86,17 +105,33 @@ program
 	.action(function build(tasks) {
 		var config = new Config().get()
 		var mango = new Mango(process.cwd(), config)
-		log.time('~ compilation time')
 
-		mango.build(tasks, function(err) {
-			log.timeEnd('~ compilation time')
-			checkError(err)
-			if(config.hooks && config.hooks.build) {
-				log.info('~ build hook: ' + config.hooks.build)
-				runcmd(config.hooks.build)
-			}
-			log.info('/>')
-		})
+		var doBuild = function() {
+			log.time('~ compilation time')
+			mango.build(tasks, function(err) {
+				log.timeEnd('~ compilation time')
+				checkError(err)
+				if(config.hooks && config.hooks.build) {
+					log.info('~ build hook: ' + config.hooks.build)
+					runcmd(config.hooks.build, null, function() {
+						log.info('/>')
+					})
+				} else {
+					log.info('/>')
+				}
+			})
+		}
+
+		// Run prebuild hook first
+		if(config.hooks && config.hooks.prebuild) {
+			log.info('~ prebuild hook: ' + config.hooks.prebuild)
+			runcmd(config.hooks.prebuild, null, doBuild)
+		}
+		// Run immediately
+		else {
+			doBuild()
+		}
+
 	})
 
 program
@@ -108,14 +143,31 @@ program
 		var config = new Config().get()
 		var mango = new Mango(process.cwd(), config)
 
-		mango.dev(options.proxy, function(err) {
-			checkError(err)
-			if(config.hooks && config.hooks.dev) {
-				log.info('~ dev hook: ' + config.hooks.dev)
-				runcmd(config.hooks.dev)
-			}
-			log.info('/>')
-		})
+		var doDev = function() {
+			mango.dev(options.proxy, function(err) {
+				checkError(err)
+				if(config.hooks && config.hooks.dev) {
+					log.info('~ dev hook: ' + config.hooks.dev)
+					runcmd(config.hooks.dev, null, function() {
+						log.info('/>')
+					})
+				} else {
+					log.info('/>')
+				}
+			})
+		}
+
+		// Run predev hook first
+		if(config.hooks && config.hooks.predev) {
+			log.info('~ predev hook: ' + config.hooks.predev)
+			runcmd(config.hooks.predev, null, doDev)
+		}
+		// Run immediately
+		else {
+			doDev()
+		}
+
+
 	})
 
 program.parse(process.argv)
