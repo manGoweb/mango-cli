@@ -16,7 +16,6 @@ All fields are array of filepath masks, relative from the mango.json file.
 * `images` - image resources. Images are minified in dist build, but just copied in dev mode.
 * `static` - static resources. Static files are copied to dist folder.
 * `templates` - templates. Static HTML files or Jade templates.
-* `watch` - additional files to watch resulting in browser reload
 
 ## Dependecies
 
@@ -49,6 +48,7 @@ All options can be overridden in `mango.local.json` file. Handy for development 
 
 * `browsersync` - options passed to [BrowserSync](http://www.browsersync.io/docs/options/) dev server
 * `proxy` - start dev server in [proxy mode](http://www.browsersync.io/docs/options/#option-proxy)
+* `watch` - additional files to watch resulting in browser reload
 
 ---
 
