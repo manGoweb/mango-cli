@@ -133,6 +133,9 @@ mango dev [http_proxy]
 Starts BrowserSync server (or proxy server) and watch for assets change.
 
 
+## Configuration
+
+More in [Configuration options](docs/config.md) docs...
 
 ## Copyright
 
