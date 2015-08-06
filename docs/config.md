@@ -33,7 +33,7 @@ Format: `"globalname": "any variable type OR filepath to JSON file"`
 * `hooks` - object with additional commands you need to run before/after certain actions
 
 Format: `"hookname": "command line command"`<br>
-Available hooks: `init`, `preinstall`, `install`, `prebuild`, `build`, `predev`, `dev`
+Available hooks: `init`, `preinstall`, `install`, `prebuild`, `build`, `predev`, `dev`, `watch`
 
 
 ## Experimental options
