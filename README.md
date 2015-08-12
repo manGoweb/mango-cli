@@ -45,8 +45,7 @@ Install mango-cli once from `npm` and use it everywhere:
 npm install -g mango-cli
 ```
 
-Just a few requirements you already have: [Node.js](http://nodejs.org) and [Git](http://git-scm.com) executable in PATH
-
+Just a few requirements you already have: [Node.js](http://nodejs.org) and [Git](http://git-scm.com) executable in `PATH` and if you are running __Windows__, there are even some more [special requirements because of node-gyp](https://github.com/TooTallNate/node-gyp).
 
 ## Usage
 
