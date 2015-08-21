@@ -79,3 +79,14 @@ Format:
 },
 "styleguide": "styleguide"
 ```
+
+### Extensions mapping
+
+File extensions are mapped to a certain task by default. This setting can be overridden in the mango.json.
+For example:
+
+```
+"mapping":{
+  "scripts": ["js", "jsx", "es6", "es", "coffee", "my.extension", "tpl.html"]
+}
+```
