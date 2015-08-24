@@ -1,4 +1,4 @@
-mango-cli [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli)
+mango-cli [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli) [![NPM downloads](https://img.shields.io/npm/dm/mango-cli.svg)](https://www.npmjs.com/package/mango-cli)
 =========
 
 [mangoweb.github.io/mango](http://mangoweb.github.io/mango)
