@@ -28,6 +28,8 @@ All fields are array of filepath masks, relative from the mango.json file.
 
 Format: `"globalname": "any variable type OR filepath to JSON file"`
 
+If `globalname` match filename, its value gets assigned as current scope, overriding (but not clears) previous state
+
 ## Hooks
 
 * `hooks` - object with additional commands you need to run before/after certain actions
