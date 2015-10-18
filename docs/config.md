@@ -57,7 +57,7 @@ All options can be overridden in `mango.local.json` file. Handy for development 
 ### Styles
 
 * `autoprefixer` - options passed to CSS [Autoprefixer](https://github.com/postcss/autoprefixer-core#usage)
-* `cssmin` - options passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically) in build task.
+* `cssmin` - options passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) in build task.
 
 ---
 
