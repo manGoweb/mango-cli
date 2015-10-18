@@ -5,8 +5,7 @@
     "styles/test.scss"
   ],
   "scripts": [
-    "js/index.js",
-    "js/ie8.js"
+    "js/index.js"
   ],
   "images": [
     "img/**/*.{jpg,png,svg}"
@@ -16,9 +15,7 @@
     "!**/_*.jade"
   ],
   "dependencies": [
-    "lt-ie-9",
-    "jquery",
-    "react"
+    "jquery"
   ],
   "watch": [
     "app/**"
