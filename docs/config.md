@@ -61,6 +61,12 @@ All options can be overridden in `mango.local.json` file. Handy for development 
 
 ---
 
+### Templates
+
+* `jade` - options passed to the [Jade compiler](http://jade-lang.com/api). Defaults are `pretty: true`, `cache: true`, `doctype: 'html'`
+
+---
+
 ### Scripts
 
 * `uglify` - options passed to UglifyJS in build task.
