@@ -138,7 +138,7 @@ program
 	.command('dev')
 	.alias('d')
 	.description('start a development mode and watch for assets change')
-	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting buildin')
+	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting built-in')
 	.action(function (options) {
 		var config = new Config().get()
 		var mango = new Mango(process.cwd(), config)
