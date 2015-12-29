@@ -51,7 +51,7 @@ describe('Mango class', function() {
 		})
 
 		it('install dependencies', function(done) {
-			this.timeout(15000)
+			this.timeout(60000)
 			mango.install(done)
 		})
 
