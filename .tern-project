@@ -1,19 +1,15 @@
 {
-	"libs": [
-		"node",
-		"ecma5",
-		"ecma6"
-	],
-	"loadEagerly": [
-		"lib/**/*.js"
-	],
-	"dontLoad": [
-	],
-	"plugins": {
-		"complete_strings": {},
-		"lint": {},
-		"doc_comment": {
-			"fullDocs": true
-		}
-	}
+  "libs": [],
+  "loadEagerly": [
+    "lib/**/*.js"
+  ],
+  "plugins": {  
+    "complete_strings": {},
+    "lint": {},
+    "doc_comment": {
+      "fullDocs": true
+    },
+    "node": {},
+    "es_modules": {}
+  }
 }
