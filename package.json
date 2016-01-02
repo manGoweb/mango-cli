@@ -60,7 +60,7 @@
     "gulp-data": "^1.2.0",
     "gulp-filter": "^3.0.1",
     "gulp-front-matter": "^1.2.3",
-    "gulp-if": "^1.2.5",
+    "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.0.0",
     "gulp-jade": "^1.1.0",
     "gulp-jade-inheritance": "^0.5.2",
