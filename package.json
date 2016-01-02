@@ -80,7 +80,7 @@
     "jade": "^1.10.0",
     "jsonfile": "^2.0.0",
     "lodash": "^3.10.1",
-    "minimatch": "^2.0.1",
+    "minimatch": "^3.0.0",
     "nib": "^1.0.4",
     "node-notifier": "^4.1.2",
     "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.3.0",
