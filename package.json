@@ -85,7 +85,7 @@
     "node-notifier": "^4.1.2",
     "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.3.0",
     "run-sequence": "^1.0.2",
-    "semver": "^4.3.3",
+    "semver": "^5.1.0",
     "webmake-coffee": "^0.1.4"
   },
   "config": {
