@@ -54,7 +54,7 @@
     "commander": "^2.5.0",
     "compression": "^1.5.0",
     "del": "^2.2.0",
-    "gift": "^0.6.0",
+    "gift": "^0.7.0",
     "gulp": "^3.8.10",
     "gulp-cached": "^1.1.0",
     "gulp-data": "^1.2.0",
