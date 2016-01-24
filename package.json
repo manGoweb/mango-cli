@@ -33,7 +33,8 @@
     "scaffolding",
     "sourcemaps",
     "stylus",
-    "uglifyjs"
+    "uglifyjs",
+    "connect-history-api-fallback"
   ],
   "author": "manGoweb s.r.o. <info@mangoweb.cz> (www.mangoweb.cz)",
   "contributors": [
