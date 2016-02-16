@@ -118,6 +118,7 @@ mango build [tasks...]
 ```
 
 All assets are compiled and minified into `dist_folder`, ready for production use.
+In case of server compilation try a stripped down [mango-cli-core](https://github.com/manGoweb/mango-cli-core) package instead.
 
 Options:
 * `[tasks...]` - run only specified tasks as `styles`, `scripts`, `images`, `templates`, `static`
@@ -138,4 +139,4 @@ More in [Configuration options](docs/config.md) docs...
 
 ## Copyright
 
-Copyright 2014 by [manGoweb s.r.o.](http://www.mangoweb.cz) Code released under [the MIT license](LICENSE). Evolved from [Frontbase](http://frontbase.org) devstack.
+Copyright 2016 by [manGoweb s.r.o.](http://www.mangoweb.cz) Code released under [the MIT license](LICENSE). Evolved from [Frontbase](http://frontbase.org) devstack.
