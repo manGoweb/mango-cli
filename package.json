@@ -78,6 +78,7 @@
     "gulp-webmake": "0.0.4",
     "imagemin-pngquant": "^4.0.0",
     "jade": "^1.10.0",
+    "js-yaml": "^3.5.3",
     "jsonfile": "^2.0.0",
     "lodash": "3.10.1",
     "minimatch": "^3.0.0",

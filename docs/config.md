@@ -1,6 +1,6 @@
 # Configuration options
 
-This document describes all available configuration options of mango.json file.
+This document describes all available configuration options of mango.yaml or mango.json file.
 
 ## Source and destination
 
@@ -9,7 +9,7 @@ This document describes all available configuration options of mango.json file.
 
 ## Tasks
 
-All fields are array of filepath masks, relative from the mango.json file.
+All fields are array of filepath masks, relative from the mango config file file.
 
 * `styles` - stylesheets. Can be CSS, LESS, SASS, Stylus
 * `scripts` - javascript. Files are treated as CommonJS modules which don't leak to global namespace. String `DEBUG` is replaced with true/false based on dev/build task.
@@ -42,7 +42,7 @@ Available hooks: `init`, `preinstall`, `install`, `prebuild`, `build`, `predev`,
 
 ### Local config
 
-All options can be overridden in `mango.local.json` file. Handy for development and deployment.
+All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file. Handy for development and deployment.
 
 ---
 
@@ -80,19 +80,18 @@ All options can be overridden in `mango.local.json` file. Handy for development 
 * `patternlab` - our fork of [patternlab-node](https://github.com/manGoweb/patternlab-node)
 
 Format:
-```json
-"patterns": {
-  "source": "patterns",
-  "public": "dist",
-  "data": "data/data.json",
-  "listitems": "data/listitems.json"
-},
-"styleguide": "styleguide"
+```yaml
+patterns:
+  source: patterns
+  public: dist
+  data: data/data.json
+  listitems: data/listitems.json
+styleguide: styleguide
 ```
 
 ### Extensions mapping
 
-File extensions are mapped to a certain task by default. This setting can be overridden in the mango.json.
+File extensions are mapped to a certain task by default. This setting can be overridden in the mango config file.
 For example:
 
 ```
