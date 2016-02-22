@@ -5,7 +5,8 @@
     "styles/test.scss"
   ],
   "scripts": [
-    "js/index.js"
+    "js/index.js",
+    "js/index-next.es6"
   ],
   "images": [
     "img/**/*.{jpg,png,svg}"
