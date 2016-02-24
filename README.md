@@ -76,39 +76,32 @@ mango install [packages...]
 ```
 
 Installs packages from NPM and stores them in `node_modules` folder, from where you can `require` them (thanks to browserify).
-Maintain current list in the `mango.json` config file under the `dependencies` section.
+Maintain current list in the `mango.yaml` config file under the `dependencies` section.
 
 
 ### Project build
 
-Assuming the config file `mango.json` is present in a current directory and contains:
+Assuming the config file `mango.yaml` is present in a current directory and contains:
 
-```json
-{
-	"styles": [
-		"styles/screen.styl"
-	],
-	"scripts": [
-		"scripts/index.js"
-	],
-	"images": [
-		"images/**/*.{jpg,png,svg}"
-	],
-	"templates": [
-		"templates/**/*.jade"
-	],
-	"static": [
-		"fonts/**"
-	],
-	"dependencies": [
-		"jquery"
-	],
-	"watch": [
-		"app/**"
-	],
-	"dist_folder": "dist"
-}
+```yaml
+styles:
+  - styles/screen.styl
+scripts:
+  - scripts/index.js
+images:
+  - images/**/*.{jpg,png,svg}
+templates:
+  - templates/**/*.jade
+static:
+  - fonts/**
+dependencies:
+  - jquery
+watch:
+  - app/**
+dist_folder: dist
 ```
+
+Config file can be also in `mango.json` file and parsed as a JSON file.
 
 
 #### Production build
