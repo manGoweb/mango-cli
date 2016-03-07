@@ -11,6 +11,12 @@
   "images": [
     "img/**/*.{jpg,png,svg}"
   ],
+  "sprites": [
+    {
+      "path": "img/bar/*.svg",
+      "name": "bar"
+    }
+  ],
   "templates": [
     "templates/**/*.jade",
     "!**/_*.jade"

@@ -16,6 +16,7 @@ All fields are array of filepath masks, relative from the mango config file file
 * `images` - image resources. Images are minified in dist build, but just copied in dev mode.
 * `static` - static resources. Static files are copied to dist folder.
 * `templates` - templates. Static HTML files or Jade templates.
+* `sprites` - Creating SVG sprites from multiple SVG files.
 
 ## Dependecies
 
@@ -72,6 +73,12 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 ### Scripts
 
 * `uglify` - options passed to UglifyJS in build task.
+
+---
+
+### Sprites
+
+* `sprites` - an array of objects. Each object contains `path` to SVG files (e.g. `src/images/sources/foo/*.svg`) and `name` (a prefix to SVG ids in generated sprites and name of the file)
 
 ---
 
