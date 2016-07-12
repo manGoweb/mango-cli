@@ -21,6 +21,10 @@
     "templates/**/*.jade",
     "!**/_*.jade"
   ],
+  "buildstamp": [
+    "dist/styles/screen.css",
+    "dist/js/index.js"
+  ],
   "dependencies": [
     "jquery"
   ],
