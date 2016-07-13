@@ -25,6 +25,9 @@
     "dist/styles/screen.css",
     "dist/js/index.js"
   ],
+  "static": [
+    "static/*"
+  ],
   "dependencies": [
     "jquery"
   ],
