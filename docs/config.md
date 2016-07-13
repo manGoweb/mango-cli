@@ -16,7 +16,8 @@ All fields are array of filepath masks, relative from the mango config file file
 * `images` - image resources. Images are minified in dist build, but just copied in dev mode.
 * `static` - static resources. Static files are copied to dist folder.
 * `templates` - templates. Static HTML files or Jade templates.
-* `sprites` - Creating SVG sprites from multiple SVG files.
+* `sprites` - svg symbols. Creating SVG sprites from multiple SVG files.
+* `buildstamp` - cache control. Renaming specified files in dist folder with build unique prefix.
 
 ## Dependecies
 
@@ -79,6 +80,12 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 ### Sprites
 
 * `sprites` - an array of objects. Each object contains `path` to SVG files (e.g. `src/images/sources/foo/*.svg`) and `name` (a prefix to SVG ids in generated sprites and name of the file)
+
+---
+
+### Buildstamp
+
+* `buildstamp` - an array of file paths. A copy of selected files is made with prefix unique to each build in filename. The prefix is available by `#{buildstamp}` in jade and stored in file `dist_folder/buildstamp.txt` for other template engines. In development the prefix is empty.
 
 ---
 
