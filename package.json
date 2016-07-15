@@ -73,7 +73,6 @@
     "gulp-replace": "^0.5.3",
     "gulp-sass": "^2.3.0-beta.1",
     "gulp-sass-glob": "^1.0.5",
-    "gulp-sequence": "^0.4.5",
     "gulp-sourcemaps": "^1.2.8",
     "gulp-stylus": "^2.3.0",
     "gulp-svg-sprite": "^1.2.19",
