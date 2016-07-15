@@ -85,7 +85,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ### Buildstamp
 
-* `buildstamp` - an array of file paths. A copy of selected files is made with prefix unique to each build in filename. The prefix is available by `#{buildstamp}` in jade and stored in file `dist_folder/buildstamp.txt` for other template engines. In development the prefix is empty.
+* `buildstamp` - an array of file paths. A copy of selected files is made with prefix unique to each build in filename. The prefix is available by `#{buildstamp}` in jade and stored in file `dist_folder/.buildstamp.txt` for other template engines. In development the prefix is empty.
 
 ---
 
