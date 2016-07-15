@@ -58,6 +58,7 @@
     "gulp": "^3.8.10",
     "gulp-cached": "^1.1.0",
     "gulp-data": "^1.2.0",
+    "gulp-file": "^0.3.0",
     "gulp-filter": "^3.0.1",
     "gulp-front-matter": "^1.2.3",
     "gulp-if": "^2.0.0",
