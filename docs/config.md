@@ -72,6 +72,17 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ---
 
+### Images
+
+* `images` - array of all images - element can be:
+    * string (glob) of source image for minification or
+    * object for resize
+        * `src` - string (glob) source of images
+        * `sizes` - array of widths (int)
+        * `aspectRatio` - aspect ratio of image on output (float = width/height), if undefined or false aspect ratio of image is used
+
+---
+
 ### Scripts
 
 * `uglify` - options passed to UglifyJS in build task.
