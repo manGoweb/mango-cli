@@ -1,6 +1,6 @@
 {
   "name": "mango-cli",
-  "version": "0.27.0",
+  "version": "0.28.0-4",
   "description": "Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.",
   "main": "index.js",
   "scripts": {
@@ -76,7 +76,7 @@
     "gulp-sourcemaps": "^1.2.8",
     "gulp-stylus": "^2.3.0",
     "gulp-svg-sprite": "^1.2.19",
-    "gulp-uglify": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.2",
     "gulp-webmake": "0.0.4",
     "imagemin-pngquant": "^4.0.0",
@@ -92,6 +92,7 @@
     "patternlab-node": "git://github.com/manGoweb/patternlab-node.git#v0.3.0",
     "run-sequence": "^1.0.2",
     "semver": "^5.1.0",
+    "sharp": "^0.15.1",
     "should": "^8.2.1",
     "webmake-coffee": "^0.1.4"
   },
