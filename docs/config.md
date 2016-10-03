@@ -69,6 +69,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 * `jade` - options passed to the [Jade compiler](http://jade-lang.com/api). Defaults are `pretty: true`, `cache: true`, `doctype: 'html'`
 * `templates` - it's elements can be string (glob) or object for generating multiple files from single template. The object needs to have two properties: `template` (containing filename of the template) and `data` (file containing json object where keys will become filenames for generated html and values will be passed to template in `fileData` variable)
 * Additional data passed to templates: `devmode` == mango dev, and `production` == mango build
+* You can also use `require()` inside a template
 
 ---
 

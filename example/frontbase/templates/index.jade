@@ -3,7 +3,11 @@ extends _layout.jade
 block content
 
 	include _intro.jade
-		
+
 	main.site-content(role='main')
 		include _samplecontent.jade
-		
+
+
+	//- Test a require statement
+	- var jq = require('jquery')
+	- jq()
