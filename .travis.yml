@@ -29,7 +29,7 @@ before_install:
       export LINKXX="g++-4.8";
     fi
   - if [ $TRAVIS_OS_NAME == "osx" ]; then
-      brew install homebrew/science/vips --with-webp --with-graphicsmagick
+      brew install homebrew/science/vips --with-webp --with-graphicsmagick;
     fi
   - nvm --version
   - node --version
