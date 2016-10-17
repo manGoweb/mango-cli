@@ -4,10 +4,14 @@ environment:
     - nodejs_version: "4" # LTS
     - nodejs_version: "6" # Latest
 
+platform:
+  - x86
+  - x64
+
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
-  - ps: Install-Product node $env:nodejs_version
+  - ps: Install-Product node $env:nodejs_version $env:platform
   # install modules
   - npm install
 
