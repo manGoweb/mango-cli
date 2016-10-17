@@ -5,7 +5,6 @@ environment:
     - nodejs_version: "6" # Latest
 
 platform:
-  - x86
   - x64
 
 # Install scripts. (runs after repo cloning)
