@@ -1,4 +1,4 @@
-mango-cli [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli) [![NPM downloads](https://img.shields.io/npm/dm/mango-cli.svg)](https://www.npmjs.com/package/mango-cli)
+mango-cli [![CircleCI](https://circleci.com/gh/manGoweb/mango-cli/tree/master.svg?style=svg)](https://circleci.com/gh/manGoweb/mango-cli/tree/master) [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli) [![Build status](https://ci.appveyor.com/api/projects/status/vwqy0au8l17xlmt9/branch/master?svg=true)](https://ci.appveyor.com/project/enzy/mango-cli/branch/master) [![NPM downloads](https://img.shields.io/npm/dm/mango-cli.svg)](https://www.npmjs.com/package/mango-cli) 
 =========
 
 [mangoweb.github.io/mango](http://mangoweb.github.io/mango)
