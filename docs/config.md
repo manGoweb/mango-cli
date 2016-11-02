@@ -102,20 +102,6 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ---
 
-### Patternlab
-
-* `patternlab` - our fork of [patternlab-node](https://github.com/manGoweb/patternlab-node)
-
-Format:
-```yaml
-patterns:
-  source: patterns
-  public: dist
-  data: data/data.json
-  listitems: data/listitems.json
-styleguide: styleguide
-```
-
 ### Extensions mapping
 
 File extensions are mapped to a certain task by default. This setting can be overridden in the mango config file.

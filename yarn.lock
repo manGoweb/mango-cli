@@ -4264,16 +4264,6 @@ path2@0.1:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/path2/-/path2-0.1.0.tgz#639828942cdbda44a41a45b074ae8873483b4efa"
 
-"patternlab-node@git://github.com/manGoweb/patternlab-node.git#v0.3.0":
-  version "0.3.0"
-  resolved "git://github.com/manGoweb/patternlab-node.git#d42529d275506e79d75dab3e13d9ede257acba16"
-  dependencies:
-    diveSync "^0.2.1"
-    extend "^2.0.0"
-    fs-extra "^0.14.0"
-    handlebars "^2.0.0"
-    matchdep "~0.3.0"
-
 pause-stream@0.0.11:
   version "0.0.11"
   resolved "https://registry.yarnpkg.com/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
