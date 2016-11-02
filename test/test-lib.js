@@ -61,7 +61,7 @@ describe('Mango class', function() {
 		})
 
 		it('run the production build task', function(done) {
-			this.timeout(15000)
+			this.timeout(120000)
 			mango.build([], done)
 		})
 
