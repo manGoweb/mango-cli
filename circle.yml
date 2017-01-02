@@ -1,3 +1,16 @@
 machine:
+  services:
+    - docker
   node:
     version: 7
+  environment:
+    DOCKER_EMAIL: rullaf@gmail.com
+    DOCKER_USER: mikulas
+    # DOCKER_PASS is private and set in CircleCI admin
+
+deployment:
+  dockerhub:
+    branch: deploy/dockerhub
+    commands:
+      - docker login -e "$DOCKER_EMAIL" -u "$DOCKER_USER" -p "$DOCKER_PASS"
+      - cd docker && make build dockerhub
