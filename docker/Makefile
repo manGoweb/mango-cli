@@ -1,7 +1,7 @@
 _: build
 
-IMAGE="mango-cli"
-ECR="831119889470.dkr.ecr.eu-west-1.amazonaws.com"
+IMAGE := mango-cli
+ECR := 831119889470.dkr.ecr.eu-west-1.amazonaws.com
 
 build:
 	docker build -t ${IMAGE} .
