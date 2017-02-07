@@ -25,7 +25,7 @@ test_script:
 # Don't actually build with MSBuild
 build: off
 
-after_build:
+after_test:
   - 7z a bundle.zip %APPVEYOR_BUILD_FOLDER%
   - appveyor PushArtifact bundle.zip
 
