@@ -27,6 +27,7 @@ build: off
 
 after_build:
   - 7z a bundle.zip %APPVEYOR_BUILD_FOLDER%
+  - appveyor PushArtifact bundle.zip
 
 artifacts:
   - path: bundle.zip
