@@ -1,7 +1,6 @@
 # Test against this version of Node.js
 environment:
   matrix:
-    - nodejs_version: "4" # LTS
     - nodejs_version: "6" # LTS
     - nodejs_version: "7" # Latest
 
@@ -31,3 +30,4 @@ after_build:
 
 artifacts:
   - path: bundle.zip
+    name: bundle
