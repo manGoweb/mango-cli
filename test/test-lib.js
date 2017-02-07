@@ -62,7 +62,7 @@ describe('Mango class', function() {
 
 		it('run the production build task', function(done) {
 			this.timeout(120000)
-			mango.build([], done)
+			mango.build([], [], done)
 		})
 
 
