@@ -102,13 +102,16 @@ program
 	.command('build [tasks...]')
 	.alias('b')
 	.description('build project assets for production')
-	.action(function build(tasks) {
+	.option('--blacklistTasks <task>,<task>', 'Tasks not to run', function (tasks) {
+		return tasks.split(',')
+	}, [])
+	.action(function build(tasks, options) {
 		var config = new Config().get()
 		var mango = new Mango(process.cwd(), config)
 
 		var doBuild = function() {
 			log.time('~ compilation time')
-			mango.build(tasks, function(err) {
+			mango.build(tasks, options.blacklistTasks, function(err) {
 				log.timeEnd('~ compilation time')
 				checkError(err)
 				if(config.hooks && config.hooks.build) {
