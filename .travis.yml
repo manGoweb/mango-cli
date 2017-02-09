@@ -3,6 +3,10 @@ node_js:
   - "7"
   - "6"
 
+env:
+  global:
+    secure: XnGZNm6Z4iJ7yCdPqVURbJ9U/9JcaAJtaUv/j2PateLwQAlNI9zs2Q79T2VplFHNwBsZ+Kne2z8gM9o6yWhMjfPTnlLQjv8d1En+EdgPNTkab8d/uUaaiLQFjFXJ2YSPD+VmnMJ0rIRqe/hAvTozzvf7ob1HgDO4t8neOW+OiPo=
+
 compiler: gcc
 sudo: false
 
@@ -43,6 +47,16 @@ script:
 
 cache:
   directories:
-    - $HOME/.node-gyp
-    - $HOME/.npm
-    - node_modules
+  - $HOME/.node-gyp
+  - $HOME/.npm
+  - node_modules
+
+before_deploy:
+  - cd $TRAVIS_BUILD_DIR && tar -zcvf mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz ./
+deploy:
+  provider: releases
+  api_key: $GHAUTH
+  file: mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
