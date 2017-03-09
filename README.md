@@ -47,9 +47,9 @@ npm install -g mango-cli
 
 Just a few requirements you already have: latest [Node.js](http://nodejs.org) and [Git](http://git-scm.com) executable in `PATH`.
 
-If you are running __Windows__, there are even some more [special requirements because of node-gyp](https://github.com/TooTallNate/node-gyp).
+If you are running __Windows__, there are even some more [special requirements because of node-gyp](https://github.com/TooTallNate/node-gyp).<br>On __OS X__ you can come across a problem with missing vips library. Install it with `brew install homebrew/science/vips --with-webp --with-graphicsmagick` first and then continue.
 
-On __OS X__ you can come across a problem with missing vips library. Install it with `brew install homebrew/science/vips --with-webp --with-graphicsmagick` first and then continue.
+If you're having problems with the installation, check out prepared [release packages](https://github.com/manGoweb/mango-cli/releases). Extract them locally and run `npm link` in the `mango-cli` folder.
 
 ## Usage
 
