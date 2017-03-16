@@ -52,7 +52,7 @@ cache:
   - node_modules
 
 before_deploy:
-  - (cd .. && tar --exclude='.git' -zcf mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz $TRAVIS_BUILD_DIR)
+  - (cd .. && tar --exclude='.git' -zcf mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR .)
 deploy:
   provider: releases
   api_key: $GHAUTH
