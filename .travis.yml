@@ -58,5 +58,6 @@ deploy:
   api_key: $GHAUTH
   file: $TRAVIS_BUILD_DIR/../mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz
   skip_cleanup: true
+  overwrite: true
   on:
     tags: true
