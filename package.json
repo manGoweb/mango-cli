@@ -75,7 +75,7 @@
     "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.3",
-    "gulp-sass": "^2.3.0-beta.1",
+    "mango-gulp-sass": "3.1.0",
     "gulp-sass-glob": "^1.0.5",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-stylus": "^2.3.0",
