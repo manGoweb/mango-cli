@@ -20,7 +20,7 @@ If you already have `mango-cli` you can init the example project simply by `mang
 <tr><td><a href="https://github.com/jakubpawlowicz/clean-css">Clean-CSS</a></td><td>Fast and efficient CSS minifier</td></tr>
 
 <tr><th colspan=2 align=left>Templates</th></tr>
-<tr><td><a href="http://jade-lang.com">Jade</a></td><td>robust, elegant and feature rich template engine</td></tr>
+<tr><td><a href="https://pugjs.org">Pug (Jade)</a></td><td>robust, elegant and feature rich template engine</td></tr>
 
 <tr><th colspan=2 align=left>Scripts</th></tr>
 <tr><td><a href="https://babeljs.io/">Babel</a></td><td>Use next generation JavaScript today</td></tr>
@@ -95,7 +95,7 @@ scripts:
 images:
   - images/**/*.{jpg,png,svg}
 templates:
-  - templates/**/*.jade
+  - templates/**/*.pug
 static:
   - fonts/**
 dependencies:
