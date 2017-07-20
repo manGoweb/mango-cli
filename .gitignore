@@ -29,3 +29,5 @@ node_modules
 
 dist
 example/frontbase/package-lock.json
+
+/package-lock.json
