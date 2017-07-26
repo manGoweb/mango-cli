@@ -36,7 +36,7 @@ before_install:
       brew update;
       brew install vips --with-webp --with-graphicsmagick;
       brew install python;
-      export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+      export PATH="/usr/local/opt/python/libexec/bin:$PATH";
     fi
   - nvm --version
   - node --version
