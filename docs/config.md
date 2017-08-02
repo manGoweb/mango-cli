@@ -92,7 +92,10 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ### Sprites
 
-* `sprites` - an array of objects. Each object contains `path` to SVG files (e.g. `src/images/sources/foo/*.svg`) and `name` (a prefix to SVG ids in generated sprites and name of the file)
+* `sprites` - an array of objects. Each object contains:
+  * `path` - to SVG files (e.g. `src/images/sources/foo/*.svg`)
+  * `name` - (optional) a prefix to SVG ids in generated sprites and name of the file
+  * `filename` - (optional) name of file to which will be sprites generated
 
 ---
 
