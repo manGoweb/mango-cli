@@ -9,7 +9,7 @@ RUN apt-get update \
         ocaml
 
 ARG version=master
-RUN npm install -g https://github.com/manGoweb/mango-cli.git#$version
+RUN npm install --unsafe-perm -g https://github.com/manGoweb/mango-cli.git#$version
 
 ENTRYPOINT ["mango"]
 CMD ["build"]
