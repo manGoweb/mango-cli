@@ -84,7 +84,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-webmake": "0.0.41",
     "js-yaml": "^3.9.1",
-    "jsonfile": "^3.0.1",
+    "jsonfile": "^4.0.0",
     "lodash": "^4.17.4",
     "mango-gulp-sass": "3.1.0",
     "merge-stream": "^1.0.0",
