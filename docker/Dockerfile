@@ -10,6 +10,7 @@ RUN apt-get update \
 
 ARG version=master
 RUN npm install --unsafe-perm -g https://github.com/manGoweb/mango-cli.git#$version
+RUN npm rebuild node-sass
 
 ENTRYPOINT ["mango"]
 CMD ["build"]
