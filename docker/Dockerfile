@@ -1,12 +1,16 @@
-FROM node:7
+FROM node:8
 
 MAINTAINER mangoweb
 
-RUN npm install -g https://github.com/manGoweb/mango-cli.git#deploy/dockerhub
+# Install dependencies
+RUN apt-get update \
+    && apt-get install -y \
+        libelf-dev \
+        ocaml
 
-ENV HOST_MOUNT /usr/src/build
-VOLUME [$HOST_MOUNT]
-WORKDIR $HOST_MOUNT
+ARG version=master
+RUN npm install --unsafe-perm -g https://github.com/manGoweb/mango-cli.git#$version
+RUN npm rebuild node-sass
 
 ENTRYPOINT ["mango"]
 CMD ["build"]
