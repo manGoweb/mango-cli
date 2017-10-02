@@ -27,7 +27,7 @@ test_script:
 build: off
 
 after_test:
-  - SET ARCHIVE=mango-cli-windows-nodeX-%APPVEYOR_REPO_TAG_NAME%.zip
+  - SET ARCHIVE=mango-cli-windows-node%nodejs_version%-%APPVEYOR_REPO_TAG_NAME%.zip
   - 7z a %ARCHIVE% %APPVEYOR_BUILD_FOLDER%
   - appveyor PushArtifact %ARCHIVE%
 
