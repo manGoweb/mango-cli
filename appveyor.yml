@@ -40,8 +40,8 @@ deploy:
   provider: GitHub
   auth_token: $(github_token)
   artifact: release-archive
-  draft: true
+  draft: false
   prerelease: false
   on:
-    branch: pr/appveyor-releases
-    #appveyor_repo_tag: true
+    branch: master
+    appveyor_repo_tag: true
