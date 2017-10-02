@@ -27,9 +27,10 @@ test_script:
 build: off
 
 after_test:
-  - 7z a bundle.zip %APPVEYOR_BUILD_FOLDER%
-  - appveyor PushArtifact bundle.zip
+  - SET ARCHIVE=mango-cli-windows-nodeX-%APPVEYOR_REPO_TAG_NAME%.zip
+  - 7z a %ARCHIVE% %APPVEYOR_BUILD_FOLDER%
+  - appveyor PushArtifact %ARCHIVE%
 
 artifacts:
-  - path: bundle.zip
-    name: bundle
+  - path: $(ARCHIVE)
+    name: release-archive
