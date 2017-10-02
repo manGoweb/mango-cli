@@ -34,3 +34,15 @@ after_test:
 artifacts:
   - path: $(ARCHIVE)
     name: release-archive
+
+deploy:
+  description: ''
+  provider: GitHub
+  auth_token:
+    secure: LtDLGpMwFWULIRpL5NnGQDKNFeLhrFpPuDeysul62B6vpD/ljXC6GFhShuKdnHey
+  artifact: release-archive
+  draft: true
+  prerelease: false
+  on:
+    branch: pr/appveyor-releases
+    #appveyor_repo_tag: true
