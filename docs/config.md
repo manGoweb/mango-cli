@@ -82,6 +82,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
         * `src` - string (glob) source of images
         * `sizes` - array of widths (int)
         * `aspectRatio` - aspect ratio of image on output (float = width/height), if undefined or false aspect ratio of image is used
+        * `options` - [output options](http://sharp.dimens.io/en/stable/api-output/#jpeg) for [sharp](http://sharp.dimens.io/en/stable/) resizing engine
 
 ---
 
