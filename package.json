@@ -102,6 +102,6 @@
   },
   "devDependencies": {
     "mocha": "^3.5.0",
-    "should": "^11.2.1"
+    "should": "^13.0.0"
   }
 }
