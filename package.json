@@ -91,7 +91,7 @@
     "minimatch": "^3.0.0",
     "nib": "^1.0.4",
     "node-notifier": "^5.1.2",
-    "pug": "^2.0.0-rc.3",
+    "pug": "^2.0.0-rc.4",
     "run-sequence": "^2.1.0",
     "semver": "^5.4.1",
     "sharp": "^0.18.2",
