@@ -86,7 +86,7 @@
     "js-yaml": "^3.9.1",
     "jsonfile": "^4.0.0",
     "lodash": "^4.17.4",
-    "mango-gulp-sass": "3.1.0",
+    "mango-gulp-sass": "3.2.0",
     "merge-stream": "^1.0.0",
     "minimatch": "^3.0.0",
     "nib": "^1.0.4",
