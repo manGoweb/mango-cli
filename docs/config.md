@@ -88,7 +88,8 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ### Scripts
 
-* `uglify` - options passed to UglifyJS in build task.
+* `rollup` - options passed to [rollup.js](https://rollupjs.org/#inputoptions) as `inputOptions` object during build task.
+* `uglify` - options passed to UglifyJS during build task.
 
 ---
 
