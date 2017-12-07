@@ -5,7 +5,6 @@ var path = require('path')
 var should = require('should')
 
 var tmpDir = `${os.tmpdir()}${path.sep}`
-
 var TEMP = fs.mkdtempSync(tmpDir)
 
 var cleanup = function() {
@@ -34,8 +33,6 @@ describe('Mango class', function() {
 
 	describe('should in a temp directory', function() {
 		var mango
-
-		before(cleanup)
 
 		it('init a template', function(done) {
 			this.timeout(15000)
