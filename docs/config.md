@@ -88,7 +88,6 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ### Scripts
 
-* `webmake` - options passed to [Webmake](https://github.com/medikoo/modules-webmake#options) in build task.
 * `uglify` - options passed to UglifyJS in build task.
 
 ---
