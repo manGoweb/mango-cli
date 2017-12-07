@@ -26,8 +26,4 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
-
 dist
-example/frontbase/package-lock.json
-
-/package-lock.json
