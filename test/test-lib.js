@@ -1,13 +1,14 @@
-var should = require('should')
 var del = require('del')
+var fs = require('fs')
+var os = require('os')
+var path = require('path')
+var should = require('should')
 
-var TEMP = 'test/temp'
-var EXAMPLE = 'example/frontbase'
-var EXAMPLE_DIST = EXAMPLE + '/dist'
-var NODE_DIR = EXAMPLE + '/node_modules'
+var tmpDir = `${os.tmpdir()}${path.sep}`
+var TEMP = fs.mkdtempSync(tmpDir)
 
 var cleanup = function() {
-	del.sync([TEMP, EXAMPLE_DIST, NODE_DIR])
+	del.sync([TEMP], { force: true })
 }
 
 describe('Mango class', function() {
@@ -31,28 +32,18 @@ describe('Mango class', function() {
 	})
 
 	describe('should in a temp directory', function() {
-
-		before(cleanup)
+		var mango
 
 		it('init a template', function(done) {
 			this.timeout(15000)
 			var pkg = require('../package')
-			var config = new Config('example/frontbase')
-			var mango2 = new Mango(TEMP, config.get())
-			mango2.init(pkg.config.default_fork_repo, done)
+			mango = new Mango(TEMP)
+			mango.init(pkg.config.default_fork_repo, done)
 		})
 
-		after(cleanup)
-	})
-
-	describe('should in the example directory', function() {
-		var mango
-
-		before(cleanup)
-
 		it('read the configuration file', function() {
-			var config = new Config('example/frontbase')
-			mango = new Mango(EXAMPLE, config.get())
+			var config = new Config(TEMP)
+			mango = new Mango(TEMP, config.get())
 		})
 
 		it('install dependencies', function(done) {
@@ -64,11 +55,6 @@ describe('Mango class', function() {
 			this.timeout(120000)
 			mango.build([], [], done)
 		})
-
-
-		// it('run development mode task', function() {
-		// 	mango.dev()
-		// })
 
 		after(cleanup)
 	})
