@@ -90,7 +90,6 @@
     "minimatch": "^3.0.0",
     "nib": "^1.0.4",
     "node-notifier": "^5.1.2",
-    "node-win-shortcut": "0.0.3",
     "pug": "^2.0.0-rc.4",
     "rollup-plugin-babel": "^v4.0.0-beta.0",
     "rollup-plugin-commonjs": "^8.2.6",
@@ -100,6 +99,9 @@
     "run-sequence": "^2.1.0",
     "semver": "^5.4.1",
     "sharp": "^0.18.2"
+  },
+  "optionalDependencies": {
+    "node-win-shortcut": "0.0.3"
   },
   "config": {
     "appId": "cz.mangoweb.mango-cli",
