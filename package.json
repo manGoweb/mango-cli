@@ -4,7 +4,8 @@
   "description": "Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "install": "node lib/helpers/createWinShortcut.js"
   },
   "bin": {
     "mango": "bin/mango"
@@ -89,6 +90,7 @@
     "minimatch": "^3.0.0",
     "nib": "^1.0.4",
     "node-notifier": "^5.1.2",
+    "node-win-shortcut": "0.0.3",
     "pug": "^2.0.0-rc.4",
     "rollup-plugin-babel": "^v4.0.0-beta.0",
     "rollup-plugin-commonjs": "^8.2.6",
@@ -100,6 +102,7 @@
     "sharp": "^0.18.2"
   },
   "config": {
+    "appId": "cz.mangoweb.mango-cli",
     "default_fork_repo": "https://github.com/mangoweb/mango-cli-example.git"
   },
   "devDependencies": {
