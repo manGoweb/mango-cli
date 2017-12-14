@@ -133,6 +133,12 @@ Starts BrowserSync server (or proxy server) and fs watch for assets change.
 
 More in [Configuration options](docs/config.md) docs...
 
+
+## FAQ
+
+More in [the Wiki page...](https://github.com/manGoweb/mango-cli/wiki/FAQ)
+
+
 ## Copyright
 
 Copyright 2016-2018 [manGoweb s.r.o.](https://www.mangoweb.cz) Code released under [the MIT license](LICENSE). Evolved from [Frontbase](http://frontbase.org) devstack.
