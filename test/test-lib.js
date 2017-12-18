@@ -7,6 +7,9 @@ var should = require('should')
 var tmpDir = `${os.tmpdir()}${path.sep}`
 var TEMP = fs.mkdtempSync(tmpDir)
 
+console.log('tmpDir', tmpDir)
+console.log('TEMP', TEMP)
+
 var cleanup = function() {
 	del.sync([TEMP], { force: true })
 }
