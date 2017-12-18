@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+require('v8-compile-cache')
+
 var checkError = require('../lib/helpers/checkerror')
 var Config = require('../lib/helpers/config')
 var log = require('better-console')
