@@ -89,6 +89,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 ### Scripts
 
 * `rollup` - options passed to [rollup.js](https://rollupjs.org/#inputoptions) as `inputOptions` object during build task.
+* `rollup_vue` - [Vue template](https://github.com/vuejs/rollup-plugin-vue) compiler and other options
 * `uglify` - options passed to UglifyJS during build task.
 
 ---
