@@ -95,10 +95,12 @@
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
     "rollup-plugin-yaml": "^1.1.0",
     "run-sequence": "^2.1.0",
     "semver": "^5.4.1",
-    "sharp": "^0.18.2"
+    "sharp": "^0.18.2",
+    "vue-template-compiler": "^2.5.11"
   },
   "optionalDependencies": {
     "node-win-shortcut": "0.0.3"
