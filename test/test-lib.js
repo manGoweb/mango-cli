@@ -11,7 +11,7 @@ console.log('tmpDir', tmpDir)
 console.log('TEMP', TEMP)
 
 var cleanup = function() {
-	del.sync([TEMP], { force: true })
+	del.sync([ path.relative(tmpDir, TEMP) ], { cwd: tmpDir, force: true })
 }
 
 describe('Mango class', function() {
