@@ -4,14 +4,14 @@ var os = require('os')
 var path = require('path')
 var should = require('should')
 
-var tmpDir = `${os.tmpdir()}${path.sep}`
+console.log('Preparing temp folder...')
+var tmpDir = fs.realpathSync(os.tmpdir()) + path.sep
 var TEMP = fs.mkdtempSync(tmpDir)
-
-console.log('tmpDir', tmpDir)
-console.log('TEMP', TEMP)
+console.log('TEMP:', TEMP)
 
 var cleanup = function() {
-	del.sync([ path.relative(tmpDir, TEMP) ], { cwd: tmpDir, force: true })
+	console.log('Clearing temp folder...', tmpDir)
+	console.log(del.sync(tmpDir, { force: true }))
 }
 
 describe('Mango class', function() {
@@ -54,7 +54,42 @@ describe('Mango class', function() {
 			mango.install(done)
 		})
 
-		it('run the production build task', function(done) {
+		it('run build scripts', function(done) {
+			this.timeout(120000)
+			mango.build(['scripts'], [], done)
+		})
+
+		it('run build styles', function(done) {
+			this.timeout(120000)
+			mango.build(['styles'], [], done)
+		})
+
+		it('run build static', function(done) {
+			this.timeout(120000)
+			mango.build(['static'], [], done)
+		})
+
+		it('run build sprites', function(done) {
+			this.timeout(120000)
+			mango.build(['static'], [], done)
+		})
+
+		it('run build templates', function(done) {
+			this.timeout(120000)
+			mango.build(['templates'], [], done)
+		})
+
+		it('run build images', function(done) {
+			this.timeout(120000)
+			mango.build(['images'], [], done)
+		})
+
+		it('run build buildstamp', function(done) {
+			this.timeout(120000)
+			mango.build(['buildstamp'], [], done)
+		})
+
+		it('run the production default build tasks', function(done) {
 			this.timeout(120000)
 			mango.build([], [], done)
 		})
