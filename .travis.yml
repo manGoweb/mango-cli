@@ -15,7 +15,7 @@ os:
   - linux
   - osx
 
-osx_image: xcode8
+osx_image: xcode9.2
 
 addons:
   apt:
@@ -37,6 +37,7 @@ before_install:
       brew install vips --with-webp --with-graphicsmagick;
       brew install python;
       export PATH="/usr/local/opt/python/libexec/bin:$PATH";
+      export TMPDIR="/tmp/";
     fi
   - nvm --version
   - node --version
