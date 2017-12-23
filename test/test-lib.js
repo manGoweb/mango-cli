@@ -10,8 +10,8 @@ var TEMP = fs.mkdtempSync(tmpDir)
 console.log('TEMP:', TEMP)
 
 var cleanup = function() {
-	console.log('Clearing temp folder...', tmpDir)
-	console.log(del.sync(tmpDir, { force: true }))
+	console.log('Clearing temp folder...', TEMP)
+	del.sync(TEMP, { force: true })
 }
 
 describe('Mango class', function() {
@@ -82,11 +82,6 @@ describe('Mango class', function() {
 		it('run build images', function(done) {
 			this.timeout(120000)
 			mango.build(['images'], [], done)
-		})
-
-		it('run build buildstamp', function(done) {
-			this.timeout(120000)
-			mango.build(['buildstamp'], [], done)
 		})
 
 		it('run the production default build tasks', function(done) {
