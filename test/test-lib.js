@@ -54,37 +54,37 @@ describe('Mango class', function() {
 			mango.install(done)
 		})
 
-		it('run build scripts', function(done) {
+		it('build scripts', function(done) {
 			this.timeout(120000)
 			mango.build(['scripts'], [], done)
 		})
 
-		it('run build styles', function(done) {
+		it('build styles', function(done) {
 			this.timeout(120000)
 			mango.build(['styles'], [], done)
 		})
 
-		it('run build static', function(done) {
+		it('build static', function(done) {
 			this.timeout(120000)
 			mango.build(['static'], [], done)
 		})
 
-		it('run build sprites', function(done) {
+		it('build sprites', function(done) {
 			this.timeout(120000)
 			mango.build(['static'], [], done)
 		})
 
-		it('run build templates', function(done) {
+		it('build templates', function(done) {
 			this.timeout(120000)
 			mango.build(['templates'], [], done)
 		})
 
-		it('run build images', function(done) {
+		it('build images', function(done) {
 			this.timeout(120000)
 			mango.build(['images'], [], done)
 		})
 
-		it('run the production default build tasks', function(done) {
+		it('run the production build tasks', function(done) {
 			this.timeout(120000)
 			mango.build([], [], done)
 		})
