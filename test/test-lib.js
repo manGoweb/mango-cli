@@ -5,7 +5,7 @@ var path = require('path')
 var should = require('should')
 
 console.log('Preparing temp folder...')
-var tmpDir = fs.realpathSync(os.tmpdir()) + path.sep
+var tmpDir = os.tmpdir() + path.sep
 var TEMP = fs.mkdtempSync(tmpDir)
 console.log('TEMP:', TEMP)
 
