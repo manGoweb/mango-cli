@@ -53,19 +53,19 @@ Before installation check that your system has these requirements:
 - [Node.js LTS (8.x)](https://nodejs.org/en/download/)
 - [Git](http://git-scm.com) executable in `PATH`
 
-### Mac OS X
+#### Mac OS X
 
    * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported) (already installed on Mac)
    * [Xcode](https://developer.apple.com/xcode/download/)
      * You also need to install the `Command Line Tools` via Xcode. You can find this under the menu `Xcode -> Preferences -> Downloads`
    * [libvips](https://jcupitt.github.io/libvips/) via Homebrew `brew install vips`
      
-### Windows
+#### Windows
    
    * [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools) via `npm install -g --production windows-build-tools` (from an elevated PowerShell)
      * will install and configure *Python v2.7* and *Visual C++ Build Tools 2015* for you
 
-### Linux
+#### Linux
 
    * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported)
    * `make`
