@@ -46,9 +46,30 @@ Install mango-cli once from `npm` and use it everywhere:
 npm install -g mango-cli
 ```
 
-Just a few requirements you already have: latest [Node.js](http://nodejs.org) and [Git](http://git-scm.com) executable in `PATH`.
+### Requirements
 
-If you are running __Windows__, there are even some more [special requirements because of node-gyp](https://github.com/TooTallNate/node-gyp).<br>On __OS X__ you can come across a problem with missing vips library. Follow these [instructions](http://sharp.dimens.io/en/stable/install/#mac-os) in sharp module docs.
+Before installation check that your system has these requirements:
+
+- [Node.js LTS (8.x)](https://nodejs.org/en/download/)
+- [Git](http://git-scm.com) executable in `PATH`
+
+### Mac OS X
+
+   * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported) (already installed on Mac)
+   * [Xcode](https://developer.apple.com/xcode/download/)
+     * You also need to install the `Command Line Tools` via Xcode. You can find this under the menu `Xcode -> Preferences -> Downloads`
+   * [libvips](https://jcupitt.github.io/libvips/) via Homebrew `brew install vips`
+     
+### Windows
+   
+   * [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools) via `npm install -g --production windows-build-tools` (from an elevated PowerShell)
+     * will install and configure *Python v2.7* and *Visual C++ Build Tools 2015* for you
+
+### Linux
+
+   * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported)
+   * `make`
+   * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org)
 
 If you're still having problems with the installation, check out prepared [release packages](https://github.com/manGoweb/mango-cli/releases). Extract them locally and run `npm link` in the `mango-cli` folder.
 
