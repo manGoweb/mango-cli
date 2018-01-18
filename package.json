@@ -120,7 +120,7 @@
     "default_fork_repo": "https://github.com/mangoweb/mango-cli-example.git"
   },
   "devDependencies": {
-    "mocha": "^4.1.0",
+    "mocha": "^5.0.0",
     "should": "^13.2.0"
   }
 }
