@@ -1,3 +1,5 @@
+<p align="center"><img width="128" src="https://s3.eu-central-1.amazonaws.com/uploads.mangoweb.org/go-outline.svg"></p>
+
 mango-cli [![CircleCI](https://circleci.com/gh/manGoweb/mango-cli/tree/master.svg?style=svg)](https://circleci.com/gh/manGoweb/mango-cli/tree/master) [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli) [![Build status](https://ci.appveyor.com/api/projects/status/vwqy0au8l17xlmt9/branch/master?svg=true)](https://ci.appveyor.com/project/enzy/mango-cli/branch/master) [![NPM downloads](https://img.shields.io/npm/dm/mango-cli.svg)](https://www.npmjs.com/package/mango-cli)
 =========
 
