@@ -71,7 +71,19 @@ Before installation check that your system has these requirements:
    * `make`
    * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org)
 
-If you're still having problems with the installation, check out prepared [release packages](https://github.com/manGoweb/mango-cli/releases). Extract them locally and run `npm link` in the `mango-cli` folder.
+
+### Alternative methods
+
+#### Docker
+
+We also provide a Docker image `mangoweb/mango-cli` which is available on the [Docker HUB](https://hub.docker.com/r/mangoweb/mango-cli/)
+
+#### Pre-packed archives
+
+If you're still having problems with the installation, check out prepared [release packages](https://github.com/manGoweb/mango-cli/releases).
+
+Extract them locally and run `npm link` in the `mango-cli` folder (on Mac OS X you still need the `libvips` dependency though).
+
 
 ## Usage
 
