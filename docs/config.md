@@ -35,7 +35,7 @@ If `globalname` match filename, its value gets assigned as current scope, overri
 
 ## Hooks
 
-* `hooks` - object with additional commands you need to run before/after certain actions
+* `hooks` - object with additional commands you need to run before/after certain actions. Prefix `pre` means before a task, no prefix means after a task finished.
 
 Format: `"hookname": "command line command"`<br>
 Available hooks: `init`, `preinstall`, `install`, `prebuild`, `build`, `predev`, `dev`, `watch`

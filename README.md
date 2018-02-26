@@ -1,13 +1,22 @@
+<p align="center"><img width="128" src="https://s3.eu-central-1.amazonaws.com/uploads.mangoweb.org/go-outline.svg"></p>
+
 mango-cli [![CircleCI](https://circleci.com/gh/manGoweb/mango-cli/tree/master.svg?style=svg)](https://circleci.com/gh/manGoweb/mango-cli/tree/master) [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli) [![Build status](https://ci.appveyor.com/api/projects/status/vwqy0au8l17xlmt9/branch/master?svg=true)](https://ci.appveyor.com/project/enzy/mango-cli/branch/master) [![NPM downloads](https://img.shields.io/npm/dm/mango-cli.svg)](https://www.npmjs.com/package/mango-cli)
 =========
-
-[mangoweb.github.io/mango](http://mangoweb.github.io/mango)
 
 Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.
 
 **A little example project** is here: [manGoweb/mango-cli-example](https://github.com/mangoweb/mango-cli-example).
 
-If you already have `mango-cli` you can init the example project simply by `mango init [your-directory]`
+
+- [Installation](#installation)
+	- [Requirements](#requirements)
+	- [Alternative methods](#alternative-methods)
+- [Usage](#usage)
+	- [Project scaffolding and initialization](#project-scaffolding-and-initialization)
+	- [Managing project dependencies](#managing-project-dependencies)
+	- [Project build](#project-build)
+- [Configuration](docs/config.md)
+- [FAQ](https://github.com/manGoweb/mango-cli/wiki/FAQ)
 
 ## Under the hood
 
@@ -46,11 +55,44 @@ Install mango-cli once from `npm` and use it everywhere:
 npm install -g mango-cli
 ```
 
-Just a few requirements you already have: latest [Node.js](http://nodejs.org) and [Git](http://git-scm.com) executable in `PATH`.
+### Requirements
 
-If you are running __Windows__, there are even some more [special requirements because of node-gyp](https://github.com/TooTallNate/node-gyp).<br>On __OS X__ you can come across a problem with missing vips library. Follow these [instructions](http://sharp.dimens.io/en/stable/install/#mac-os) in sharp module docs.
+Before installation check that your system has these requirements:
 
-If you're still having problems with the installation, check out prepared [release packages](https://github.com/manGoweb/mango-cli/releases). Extract them locally and run `npm link` in the `mango-cli` folder.
+- [Node.js LTS (8.x)](https://nodejs.org/en/download/)
+- [Git](http://git-scm.com) executable in `PATH`
+
+#### Mac OS X
+
+   * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported) (already installed on Mac)
+   * [Xcode](https://developer.apple.com/xcode/download/)
+     * You also need to install the `Command Line Tools` via Xcode. You can find this under the menu `Xcode -> Preferences -> Downloads`
+   * [libvips](https://jcupitt.github.io/libvips/) via Homebrew `brew install vips`
+     
+#### Windows
+   
+   * [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools) via `npm install -g --production windows-build-tools` (from an elevated PowerShell)
+     * will install and configure *Python v2.7* and *Visual C++ Build Tools 2015* for you
+
+#### Linux
+
+   * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported)
+   * `make`
+   * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org)
+
+
+### Alternative methods
+
+#### Docker
+
+We also provide a Docker image `mangoweb/mango-cli` which is available on the [Docker HUB](https://hub.docker.com/r/mangoweb/mango-cli/)
+
+#### Pre-packed archives
+
+If you're still having problems with the installation, check out prepared [release packages](https://github.com/manGoweb/mango-cli/releases).
+
+Extract them locally and run `npm link` in the `mango-cli` folder (on Mac OS X you still need the `libvips` dependency though).
+
 
 ## Usage
 
