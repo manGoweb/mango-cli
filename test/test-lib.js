@@ -41,7 +41,7 @@ describe('Mango class', function() {
 			this.timeout(15000)
 			var pkg = require('../package')
 			mango = new Mango(TEMP)
-			mango.init(pkg.config.default_fork_repo, done)
+			mango.init(pkg.config.tests_repo, done)
 		})
 
 		it('read the configuration file', function() {
