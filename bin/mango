@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+require('v8-compile-cache')
+
 var checkError = require('../lib/helpers/checkerror')
 var Config = require('../lib/helpers/config')
 var log = require('better-console')
@@ -102,12 +104,13 @@ program
 	.command('build [tasks...]')
 	.alias('b')
 	.description('build project assets for production')
+	.option('--customConfig [customConfig]', 'Read the config from custom file')
 	.option('--reuseBuildstamp', 'Reuse buildstamp from previous build')
 	.option('--blacklistTasks <task>,<task>', 'Tasks not to run', function (tasks) {
 		return tasks.split(',')
 	}, [])
 	.action(function build(tasks, options) {
-		var config = new Config().get(false, options.reuseBuildstamp)
+		var config = new Config(null, options.customConfig).get(false, options.reuseBuildstamp)
 		var mango = new Mango(process.cwd(), config)
 
 		var doBuild = function() {

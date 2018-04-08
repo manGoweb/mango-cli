@@ -1,13 +1,17 @@
-var should = require('should')
 var del = require('del')
+var fs = require('fs')
+var os = require('os')
+var path = require('path')
+var should = require('should')
 
-var TEMP = 'test/temp'
-var EXAMPLE = 'example/frontbase'
-var EXAMPLE_DIST = EXAMPLE + '/dist'
-var NODE_DIR = EXAMPLE + '/node_modules'
+console.log('Preparing temp folder...')
+var tmpDir = os.tmpdir() + path.sep
+var TEMP = fs.mkdtempSync(tmpDir)
+console.log('TEMP:', TEMP)
 
 var cleanup = function() {
-	del.sync([TEMP, EXAMPLE_DIST, NODE_DIR])
+	console.log('Clearing temp folder...', TEMP)
+	del.sync(TEMP, { force: true })
 }
 
 describe('Mango class', function() {
@@ -31,28 +35,18 @@ describe('Mango class', function() {
 	})
 
 	describe('should in a temp directory', function() {
-
-		before(cleanup)
+		var mango
 
 		it('init a template', function(done) {
 			this.timeout(15000)
 			var pkg = require('../package')
-			var config = new Config('example/frontbase')
-			var mango2 = new Mango(TEMP, config.get())
-			mango2.init(pkg.config.default_fork_repo, done)
+			mango = new Mango(TEMP)
+			mango.init(pkg.config.tests_repo, done)
 		})
 
-		after(cleanup)
-	})
-
-	describe('should in the example directory', function() {
-		var mango
-
-		before(cleanup)
-
 		it('read the configuration file', function() {
-			var config = new Config('example/frontbase')
-			mango = new Mango(EXAMPLE, config.get())
+			var config = new Config(TEMP)
+			mango = new Mango(TEMP, config.get())
 		})
 
 		it('install dependencies', function(done) {
@@ -60,15 +54,40 @@ describe('Mango class', function() {
 			mango.install(done)
 		})
 
-		it('run the production build task', function(done) {
+		it('build scripts', function(done) {
+			this.timeout(120000)
+			mango.build(['scripts'], [], done)
+		})
+
+		it('build styles', function(done) {
+			this.timeout(120000)
+			mango.build(['styles'], [], done)
+		})
+
+		it('build static', function(done) {
+			this.timeout(120000)
+			mango.build(['static'], [], done)
+		})
+
+		it('build sprites', function(done) {
+			this.timeout(120000)
+			mango.build(['static'], [], done)
+		})
+
+		it('build templates', function(done) {
+			this.timeout(120000)
+			mango.build(['templates'], [], done)
+		})
+
+		it('build images', function(done) {
+			this.timeout(120000)
+			mango.build(['images'], [], done)
+		})
+
+		it('run the production build tasks', function(done) {
 			this.timeout(120000)
 			mango.build([], [], done)
 		})
-
-
-		// it('run development mode task', function() {
-		// 	mango.dev()
-		// })
 
 		after(cleanup)
 	})

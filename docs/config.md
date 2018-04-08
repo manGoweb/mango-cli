@@ -6,6 +6,7 @@ This document describes all available configuration options of mango.yaml or man
 
 * `src_folder` - a folder with all source files. Content of this folder is watched in dev mode for changes. This path is filtered from destination path.
 * **`dist_folder`** - build destination folder. The only one required option.
+* `dist_persistent_folder` - a folder to build all assets except html into, defaults to value of `dist_folder` 
 
 ## Tasks
 
@@ -15,7 +16,7 @@ All fields are array of filepath masks, relative from the mango config file file
 * `scripts` - javascript. Files are treated as CommonJS modules which don't leak to global namespace. String `DEBUG` is replaced with true/false based on dev/build task.
 * `images` - image resources. Images are minified in dist build, but just copied in dev mode.
 * `static` - static resources. Static files are copied to dist folder.
-* `templates` - templates. Static HTML files or Jade templates.
+* `templates` - templates. Static HTML files or Jade|Pug templates.
 * `sprites` - svg symbols. Creating SVG sprites from multiple SVG files.
 * `buildstamp` - cache control. Renaming specified files in dist folder with build unique prefix.
 
@@ -34,7 +35,7 @@ If `globalname` match filename, its value gets assigned as current scope, overri
 
 ## Hooks
 
-* `hooks` - object with additional commands you need to run before/after certain actions
+* `hooks` - object with additional commands you need to run before/after certain actions. Prefix `pre` means before a task, no prefix means after a task finished.
 
 Format: `"hookname": "command line command"`<br>
 Available hooks: `init`, `preinstall`, `install`, `prebuild`, `build`, `predev`, `dev`, `watch`
@@ -66,7 +67,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ### Templates
 
-* `jade` - options passed to the [Jade compiler](http://jade-lang.com/api). Defaults are `pretty: true`, `cache: true`, `doctype: 'html'`
+* `pug` - options passed to the [Pug compiler](https://pugjs.org/api/reference.html). Defaults are `pretty: true`, `cache: true`, `doctype: 'html'`
 * `templates` - it's elements can be string (glob) or object for generating multiple files from single template. The object needs to have two properties: `template` (containing filename of the template) and `data` (file containing json object where keys will become filenames for generated html and values will be passed to template in `fileData` variable)
 * Additional data passed to templates: `devmode` == mango dev, and `production` == mango build
 * You can also use `require()` inside a template
@@ -81,18 +82,25 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
         * `src` - string (glob) source of images
         * `sizes` - array of widths (int)
         * `aspectRatio` - aspect ratio of image on output (float = width/height), if undefined or false aspect ratio of image is used
+        * `options` - [output options](http://sharp.dimens.io/en/stable/api-output/#jpeg) for [sharp](http://sharp.dimens.io/en/stable/) resizing engine
 
 ---
 
 ### Scripts
 
-* `uglify` - options passed to UglifyJS in build task.
+* `rollup` - options passed to [rollup.js](https://rollupjs.org/#inputoptions) as `inputOptions` object during build task.
+* `rollup_virtual` - [load modules from memory](https://github.com/rollup/rollup-plugin-virtual) ex. `jquery: export default window.jQuery`
+* `rollup_vue` - [Vue template](https://github.com/vuejs/rollup-plugin-vue) compiler and other options
+* `uglify` - options passed to UglifyJS during build task.
 
 ---
 
 ### Sprites
 
-* `sprites` - an array of objects. Each object contains `path` to SVG files (e.g. `src/images/sources/foo/*.svg`) and `name` (a prefix to SVG ids in generated sprites and name of the file)
+* `sprites` - an array of objects. Each object contains:
+  * `path` - to SVG files (e.g. `src/images/sources/foo/*.svg`)
+  * `name` - (optional) a prefix to SVG ids in generated sprites and name of the file
+  * `filename` - (optional) name of file to which will be sprites generated
 
 ---
 

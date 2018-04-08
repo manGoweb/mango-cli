@@ -1,8 +1,9 @@
 # Test against this version of Node.js
 environment:
   matrix:
-    - nodejs_version: "6" # LTS
-    - nodejs_version: "7" # Latest
+    - nodejs_version: "6"
+    - nodejs_version: "8"
+    - nodejs_version: "9"
 
 platform:
   - x64
@@ -26,9 +27,21 @@ test_script:
 build: off
 
 after_test:
-  - 7z a bundle.zip %APPVEYOR_BUILD_FOLDER%
-  - appveyor PushArtifact bundle.zip
+  - SET ARCHIVE=mango-cli-windows-node%nodejs_version%-%APPVEYOR_REPO_TAG_NAME%.zip
+  - 7z a %ARCHIVE% %APPVEYOR_BUILD_FOLDER%
+  - appveyor PushArtifact %ARCHIVE%
 
 artifacts:
-  - path: bundle.zip
-    name: bundle
+  - path: $(ARCHIVE)
+    name: release-archive
+
+deploy:
+  description: ''
+  provider: GitHub
+  auth_token: $(github_token)
+  artifact: release-archive
+  draft: false
+  prerelease: false
+  on:
+    branch: master
+    appveyor_repo_tag: true

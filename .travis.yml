@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - "7"
+  - "9"
+  - "8"
   - "6"
 
 env:
@@ -14,7 +15,7 @@ os:
   - linux
   - osx
 
-osx_image: xcode8
+osx_image: xcode9.2
 
 addons:
   apt:
@@ -25,7 +26,6 @@ addons:
       - g++-4.8
 
 before_install:
-  - npm config set python `which python`
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
       export CC="gcc-4.8";
       export CXX="g++-4.8";
@@ -33,13 +33,19 @@ before_install:
       export LINKXX="g++-4.8";
     fi
   - if [ $TRAVIS_OS_NAME == "osx" ]; then
-      brew install homebrew/science/vips --with-webp --with-graphicsmagick;
+      brew update;
+      brew install vips;
+      brew install python;
+      export PATH="/usr/local/opt/python/libexec/bin:$PATH";
+      export TMPDIR="/tmp/";
     fi
   - nvm --version
   - node --version
   - npm --version
   - gcc --version
   - g++ --version
+  - python --version
+  - npm config set python `which python`
 
 script:
   - npm install
@@ -52,11 +58,12 @@ cache:
   - node_modules
 
 before_deploy:
-  - cd $TRAVIS_BUILD_DIR && tar -zcvf mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz ./
+  - (cd .. && tar --exclude='.git' -zcf mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz -C $TRAVIS_BUILD_DIR .)
 deploy:
   provider: releases
   api_key: $GHAUTH
-  file: mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz
+  file: $TRAVIS_BUILD_DIR/../mango-cli-$TRAVIS_OS_NAME-node$TRAVIS_NODE_VERSION-$TRAVIS_TAG.tar.gz
   skip_cleanup: true
+  overwrite: true
   on:
     tags: true
