@@ -152,6 +152,8 @@ program
 		var config = new Config().get()
 		var mango = new Mango(process.cwd(), config)
 
+		log.log('mango-cli v' + pkg.version)
+
 		var doDev = function() {
 			mango.dev(options.proxy, function(err) {
 				checkError(err)
