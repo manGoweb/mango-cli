@@ -113,6 +113,8 @@ program
 		var config = new Config(null, options.customConfig).get(false, options.reuseBuildstamp)
 		var mango = new Mango(process.cwd(), config)
 
+		log.log('mango-cli v' + pkg.version)
+
 		var doBuild = function() {
 			log.time('~ compilation time')
 			mango.build(tasks, options.blacklistTasks, function(err) {
