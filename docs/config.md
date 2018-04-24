@@ -6,7 +6,7 @@ This document describes all available configuration options of mango.yaml or man
 
 * `src_folder` - a folder with all source files. Content of this folder is watched in dev mode for changes. This path is filtered from destination path.
 * **`dist_folder`** - build destination folder. The only one required option.
-* `dist_persistent_folder` - a folder to build all assets except html into, defaults to value of `dist_folder` 
+* `dist_persistent_folder` - a folder to build all assets except html into, defaults to value of `dist_folder`
 
 ## Tasks
 
@@ -29,7 +29,7 @@ All fields are array of filepath masks, relative from the mango config file file
 
 * `data` - object containing data supplied to templates in build time.
 
-Format: `"globalname": "any variable type OR filepath to JSON file"`
+Format: `"globalname": "any variable type OR filepath to JSON / YAML file"`
 
 If `globalname` match filename, its value gets assigned as current scope, overriding (but not clears) previous state
 
