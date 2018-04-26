@@ -16,7 +16,7 @@
     "url": "https://github.com/manGoweb/mango-cli.git"
   },
   "engines": {
-    "node": ">=6.12"
+    "node": ">=8"
   },
   "keywords": [
     "browserify",
