@@ -110,7 +110,7 @@
     "run-sequence": "^2.2.1",
     "semver": "^5.5.0",
     "sharp": "^0.20.1",
-    "v8-compile-cache": "^1.1.2",
+    "v8-compile-cache": "^2.0.0",
     "vue-template-compiler": "^2.5.16"
   },
   "optionalDependencies": {
