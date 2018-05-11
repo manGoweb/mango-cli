@@ -89,7 +89,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylus": "^2.7.0",
     "gulp-svg-sprite": "^1.4.0",
-    "gulp-uglify-es": "^1.0.1",
     "js-yaml": "^3.11.0",
     "jsonfile": "^4.0.0",
     "lodash": "^4.17.10",
