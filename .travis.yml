@@ -34,7 +34,8 @@ before_install:
   - if [ $TRAVIS_OS_NAME == "osx" ]; then
       brew update;
       brew install vips;
-      brew install python;
+      brew install python@2;
+      brew link --overwrite python@2;
       export PATH="/usr/local/opt/python/libexec/bin:$PATH";
       export TMPDIR="/tmp/";
     fi
