@@ -32,11 +32,9 @@ Scaffold and build your projects way more faster than before. Preconfigured fron
 <tr><td><a href="https://pugjs.org">Pug (Jade)</a></td><td>robust, elegant and feature rich template engine</td></tr>
 
 <tr><th colspan=2 align=left>Scripts</th></tr>
+<tr><td><a href="https://webpack.js.org">Webpack</a></td><td>Static module bundler for modern JavaScript applications</td></tr>
 <tr><td><a href="https://babeljs.io/">Babel</a></td><td>Use next generation JavaScript today</td></tr>
 <tr><td><a href="http://facebook.github.io/react">React</a></td><td>JavaScript library for building user interfaces from Facebook</td></tr>
-<tr><td><a href="https://vuejs.org/">Vue.js</a></td><td>The Progressive JavaScript Framework</td></tr>
-<tr><td><a href="http://coffeescript.org">CoffeeScript</a></td><td>little language that compiles into JavaScript</td></tr>
-<tr><td><a href="https://rollupjs.org">rollup.js</a></td><td>Next-generation ES6 module bundler</td></tr>
 <tr><td><a href="http://lisperator.net/uglifyjs">UglifyJS</a></td><td>JavaScript minifier</td></tr>
 
 <tr><th colspan=2 align=left>Tools</th></tr>
@@ -68,9 +66,9 @@ Before installation check that your system has these requirements:
    * [Xcode](https://developer.apple.com/xcode/download/)
      * You also need to install the `Command Line Tools` via Xcode. You can find this under the menu `Xcode -> Preferences -> Downloads`
    * [libvips](https://jcupitt.github.io/libvips/) via Homebrew `brew install vips`
-     
+
 #### Windows
-   
+
    * [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools) via `npm install -g --production windows-build-tools` (from an elevated PowerShell)
      * will install and configure *Python v2.7* and *Visual C++ Build Tools 2015* for you
 
