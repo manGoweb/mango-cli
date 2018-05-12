@@ -13,7 +13,7 @@ This document describes all available configuration options of mango.yaml or man
 All fields are array of filepath masks, relative from the mango config file file.
 
 * `styles` - stylesheets. Can be CSS, LESS, SASS, Stylus
-* `scripts` - javascript. Files are treated as CommonJS modules which don't leak to global namespace. String `DEBUG` is replaced with true/false based on dev/build task.
+* `scripts` - javascript. Files are treated as modules which don't leak to global namespace. String `DEBUG` is replaced with true/false based on dev/build task.
 * `images` - image resources. Images are minified in dist build, but just copied in dev mode.
 * `static` - static resources. Static files are copied to dist folder.
 * `templates` - templates. Static HTML files or Jade|Pug templates.
@@ -88,10 +88,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 
 ### Scripts
 
-* `rollup` - options passed to [rollup.js](https://rollupjs.org/#inputoptions) as `inputOptions` object during build task.
-* `rollup_virtual` - [load modules from memory](https://github.com/rollup/rollup-plugin-virtual) ex. `jquery: export default window.jQuery`
-* `rollup_vue` - [Vue template](https://github.com/vuejs/rollup-plugin-vue) compiler and other options
-* `uglify` - options passed to UglifyJS during build task.
+* `webpack` - extra options passed to [webpack configuration object](https://webpack.js.org/configuration/)
 
 ---
 
