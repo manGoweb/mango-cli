@@ -103,7 +103,7 @@
     "sharp": "^0.20.1",
     "v8-compile-cache": "^2.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.8.1",
+    "webpack": "^4.8.2",
     "webpack-stream": "^4.0.3"
   },
   "optionalDependencies": {
