@@ -36,7 +36,6 @@ before_install:
       brew install vips;
       brew install python@2;
       brew link --overwrite python@2;
-      export PATH="/usr/local/opt/python/libexec/bin:$PATH";
       export TMPDIR="/tmp/";
     fi
   - nvm --version
@@ -45,7 +44,12 @@ before_install:
   - gcc --version
   - g++ --version
   - python --version
-  - npm config set python `which python`
+  - if [ $TRAVIS_OS_NAME == "linux" ]; then
+      npm config set python `which python`;
+    fi
+  - if [ $TRAVIS_OS_NAME == "osx" ]; then
+      npm config set python `which python2`;
+    fi
 
 script:
   - npm install
