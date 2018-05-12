@@ -101,7 +101,7 @@
     "rollup-plugin-babel": "^4.0.0-beta.2",
     "rollup-plugin-commonjs": "9.1.0",
     "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-resolve": "^3.2.0",
+    "rollup-plugin-node-resolve": "3.2.0",
     "rollup-plugin-pug": "^0.1.6",
     "rollup-plugin-virtual": "^1.0.1",
     "rollup-plugin-vue": "^3.0.0",
