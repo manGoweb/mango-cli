@@ -44,9 +44,9 @@ describe('Mango class', function() {
 			mango.init(pkg.config.tests_repo, done)
 		})
 
-		it('read the configuration file', function() {
+		it('read the configuration file', async function() {
 			var config = new Config(TEMP)
-			mango = new Mango(TEMP, config.get())
+			mango = new Mango(TEMP, await config.get())
 		})
 
 		it('install dependencies', function(done) {
