@@ -18,7 +18,7 @@ program
 	.command('init [directory]')
 	.description('initialize a new project')
 	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
-	.action(function init(directory, options) {
+	.action(async function init(directory, options) {
 		var dir = path.resolve(process.cwd(), directory || '.')
 		var mango = new Mango(dir)
 		var source = options.source || pkg.config.default_fork_repo
@@ -28,7 +28,7 @@ program
 			log.timeEnd('~ initialization time')
 			checkError(err)
 
-			var config = new Config(dir).get()
+			var config = await (new Config(dir)).get()
 			if(config.hooks && config.hooks.init) {
 				log.info('~ init hook: ' + config.hooks.init)
 				runcmd(config.hooks.init, dir, function() {
@@ -44,11 +44,11 @@ program
 	.command('install [packages...]')
 	.alias('i')
 	.description('NPM install of passed packages or dependencies specified in config')
-	.action(function install(packages) {
+	.action(async function install(packages) {
 		var dir = process.cwd()
 		var config = new Config()
-		var mainconfig = config.get(true)
-		var fullconfig = config.get()
+		var mainconfig = await config.get(true)
+		var fullconfig = await config.get()
 
 		var onFinish = function() {
 			log.timeEnd('~ installation time')
@@ -109,8 +109,8 @@ program
 	.option('--blacklistTasks <task>,<task>', 'Tasks not to run', function (tasks) {
 		return tasks.split(',')
 	}, [])
-	.action(function build(tasks, options) {
-		var config = new Config(null, options.customConfig).get(false, options.reuseBuildstamp)
+	.action(async function build(tasks, options) {
+		var config = await (new Config(null, options.customConfig)).get(false, options.reuseBuildstamp)
 		var mango = new Mango(process.cwd(), config)
 
 		log.log('mango-cli v' + pkg.version)
@@ -148,8 +148,8 @@ program
 	.alias('d')
 	.description('start a development mode and watch for assets change')
 	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting built-in')
-	.action(function (options) {
-		var config = new Config().get()
+	.action(async function (options) {
+		var config = await (new Config()).get()
 		var mango = new Mango(process.cwd(), config)
 
 		log.log('mango-cli v' + pkg.version)
