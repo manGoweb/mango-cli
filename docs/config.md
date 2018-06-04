@@ -1,6 +1,6 @@
 # Configuration options
 
-This document describes all available configuration options of mango.yaml or mango.json file.
+This document describes all available configuration options of mango.yaml, mango.json or mango.js file.
 
 ## Source and destination
 
