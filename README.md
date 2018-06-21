@@ -146,7 +146,7 @@ watch:
 dist_folder: dist
 ```
 
-Config file can be in JSON or JS formats. `mango.json` gets parsed as a JSON file, `mango.js` gets required as-is.
+Config file can be in JSON or JS formats. `mango.json` gets parsed as a JSON file, `mango.config.js` gets required as-is.
 
 
 #### Production build
