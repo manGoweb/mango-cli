@@ -49,6 +49,8 @@ argv
 		const mainconfig = await config.get(true)
 		const fullconfig = await config.get()
 
+		log.warn('DEPRECATED: Use package.json and npm install instead')
+
 		const onFinish = function() {
 			log.timeEnd('~ installation time')
 			if(fullconfig.hooks && fullconfig.hooks.install) {
