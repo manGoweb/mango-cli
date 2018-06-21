@@ -24,7 +24,7 @@ argv
 		const source = argv.source || pkg.config.default_fork_repo
 		log.time('~ initialization time')
 
-		mango.init(source, function(err) {
+		mango.init(source, async function(err) {
 			log.timeEnd('~ initialization time')
 			checkError(err)
 
