@@ -157,7 +157,7 @@ argv
 			alias: 'p',
 			describe: 'Proxy to a server instead of starting built-in',
 		}
-	}, async function (argv) {
+	}, async function dev(argv) {
 		const config = await (new Config()).get()
 		const mango = new Mango(process.cwd(), config)
 
