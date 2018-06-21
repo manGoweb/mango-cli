@@ -65,7 +65,6 @@
     "browser-sync": "^2.24.4",
     "chalk": "^2.4.1",
     "chokidar": "^2.0.3",
-    "commander": "^2.15.1",
     "compression": "^1.7.2",
     "del": "^3.0.0",
     "gift": "^0.10.2",
@@ -106,6 +105,7 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^4.10.2",
     "webpack-stream": "^4.0.3",
+    "yargs": "^11.0.0",
     "yml-loader": "^2.1.0"
   },
   "optionalDependencies": {

@@ -1,34 +1,34 @@
 #!/usr/bin/env node
 require('v8-compile-cache')
 
-var checkError = require('../lib/helpers/checkerror')
-var Config = require('../lib/helpers/config')
-var log = require('better-console')
-var Mango = require('../lib/mango')
-var path = require('path')
-var pkg = require('../package.json')
-var program = require('commander')
-var runcmd = require('../lib/helpers/runcmd')
-var unique = require('../lib/helpers/unique')
+const argv = require('yargs')
+const checkError = require('../lib/helpers/checkerror')
+const Config = require('../lib/helpers/config')
+const log = require('better-console')
+const Mango = require('../lib/mango')
+const path = require('path')
+const pkg = require('../package.json')
+const runcmd = require('../lib/helpers/runcmd')
+const unique = require('../lib/helpers/unique')
 
-program
-	.version(pkg.version)
-
-program
-	.command('init [directory]')
-	.description('initialize a new project')
-	.option('-s, --source [git_repository]', 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo)
-	.action(async function init(directory, options) {
-		var dir = path.resolve(process.cwd(), directory || '.')
-		var mango = new Mango(dir)
-		var source = options.source || pkg.config.default_fork_repo
+argv
+	.command('init [directory]', 'initialize a new project', {
+		source: {
+			alias: 's',
+			describe: 'Template repository to fork. Defaults to ' + pkg.config.default_fork_repo,
+			default: pkg.config.default_fork_repo,
+		}
+	}, async function init(argv) {
+		const dir = path.resolve(process.cwd(), argv.directory || '.')
+		const mango = new Mango(dir)
+		const source = argv.source || pkg.config.default_fork_repo
 		log.time('~ initialization time')
 
 		mango.init(source, function(err) {
 			log.timeEnd('~ initialization time')
 			checkError(err)
 
-			var config = await (new Config(dir)).get()
+			const config = await (new Config(dir)).get()
 			if(config.hooks && config.hooks.init) {
 				log.info('~ init hook: ' + config.hooks.init)
 				runcmd(config.hooks.init, dir, function() {
@@ -40,17 +40,16 @@ program
 		})
 	})
 
-program
-	.command('install [packages...]')
-	.alias('i')
-	.description('NPM install of passed packages or dependencies specified in config')
-	.action(async function install(packages) {
-		var dir = process.cwd()
-		var config = new Config()
-		var mainconfig = await config.get(true)
-		var fullconfig = await config.get()
 
-		var onFinish = function() {
+	.command(['install [packages..]', 'i'], 'NPM install of passed packages or dependencies specified in config', {
+	}, async function install(argv) {
+		const packages = argv.packages
+		const dir = process.cwd()
+		const config = new Config()
+		const mainconfig = await config.get(true)
+		const fullconfig = await config.get()
+
+		const onFinish = function() {
 			log.timeEnd('~ installation time')
 			if(fullconfig.hooks && fullconfig.hooks.install) {
 				log.info('~ install hook: ' + fullconfig.hooks.install)
@@ -62,7 +61,7 @@ program
 			}
 		}
 
-		var doInstall = function() {
+		const doInstall = function() {
 			log.time('~ installation time')
 			// Install only passed packages and update mango.json
 			if(packages.length > 0) {
@@ -79,7 +78,7 @@ program
 			}
 			// Install packages specifies in mango.json
 			else {
-				var mango = new Mango(dir, fullconfig)
+				const mango = new Mango(dir, fullconfig)
 				mango.install(function(err) {
 					checkError(err)
 					onFinish()
@@ -100,24 +99,33 @@ program
 
 	})
 
-program
-	.command('build [tasks...]')
-	.alias('b')
-	.description('build project assets for production')
-	.option('--customConfig [customConfig]', 'Read the config from custom file')
-	.option('--reuseBuildstamp', 'Reuse buildstamp from previous build')
-	.option('--blacklistTasks <task>,<task>', 'Tasks not to run', function (tasks) {
-		return tasks.split(',')
-	}, [])
-	.action(async function build(tasks, options) {
-		var config = await (new Config(null, options.customConfig)).get(false, options.reuseBuildstamp)
-		var mango = new Mango(process.cwd(), config)
+
+	.command(['build [tasks...]', 'b'], 'build project assets for production', {
+		customConfig: {
+			alias: 'c',
+			describe: 'Read the config from custom file',
+		},
+		reuseBuildstamp: {
+			alias: 'rb',
+			describe: 'Reuse buildstamp from previous build',
+			boolean: true,
+		},
+		blacklistTasks: {
+			alias: 'bl',
+			describe: 'Tasks not to run',
+			default: '',
+		},
+	}, async function build(argv) {
+		const tasks = argv.tasks
+		const blacklistTasks = argv.blacklistTasks.split(',')
+		const config = await (new Config(null, argv.customConfig)).get(false, argv.reuseBuildstamp)
+		const mango = new Mango(process.cwd(), config)
 
 		log.log('mango-cli v' + pkg.version)
 
 		var doBuild = function() {
 			log.time('~ compilation time')
-			mango.build(tasks, options.blacklistTasks, function(err) {
+			mango.build(tasks, blacklistTasks, function(err) {
 				log.timeEnd('~ compilation time')
 				checkError(err)
 				if(config.hooks && config.hooks.build) {
@@ -143,19 +151,20 @@ program
 
 	})
 
-program
-	.command('dev')
-	.alias('d')
-	.description('start a development mode and watch for assets change')
-	.option('-p, --proxy [http_proxy]', 'Proxy to a server instead of starting built-in')
-	.action(async function (options) {
-		var config = await (new Config()).get()
-		var mango = new Mango(process.cwd(), config)
+
+	.command(['dev', 'd'], 'start a development mode and watch for assets change', {
+		proxy: {
+			alias: 'p',
+			describe: 'Proxy to a server instead of starting built-in',
+		}
+	}, async function (argv) {
+		const config = await (new Config()).get()
+		const mango = new Mango(process.cwd(), config)
 
 		log.log('mango-cli v' + pkg.version)
 
-		var doDev = function() {
-			mango.dev(options.proxy, function(err) {
+		const doDev = function() {
+			mango.dev(argv.proxy, function(err) {
 				checkError(err)
 				if(config.hooks && config.hooks.dev) {
 					log.info('~ dev hook: ' + config.hooks.dev)
@@ -178,11 +187,9 @@ program
 			doDev()
 		}
 
-
 	})
 
-program.parse(process.argv)
+	.demandCommand(1)
+	.help()
+	.argv
 
-if(program.args.length === 0) {
-	program.help()
-}
