@@ -68,7 +68,6 @@
     "chokidar": "^2.0.4",
     "compression": "^1.7.3",
     "del": "^3.0.0",
-    "fork-ts-checker-webpack-plugin": "^0.4.2",
     "gift": "^0.10.2",
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.1",
