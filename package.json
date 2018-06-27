@@ -103,6 +103,7 @@
     "semver": "^5.5.0",
     "sharp": "^0.20.5",
     "ts-loader": "^4.4.1",
+    "typescript": "^2.9.2",
     "v8-compile-cache": "^2.0.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.16.1",
