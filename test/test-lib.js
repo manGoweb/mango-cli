@@ -3,6 +3,7 @@ var fs = require('fs')
 var os = require('os')
 var path = require('path')
 var should = require('should')
+const runcmd = require('../lib/helpers/runcmd')
 
 console.log('Preparing temp folder...')
 var tmpDir = os.tmpdir() + path.sep
@@ -49,9 +50,13 @@ describe('Mango class', function() {
 			mango = new Mango(TEMP, await config.get())
 		})
 
-		it('install dependencies', function(done) {
+		it('run init hooks', function(done) {
 			this.timeout(60000)
-			mango.install(done)
+			if(mango.config.hooks && mango.config.hooks.init) {
+				runcmd(mango.config.hooks.init, mango.config.dir, done)
+			} else {
+				done()
+			}
 		})
 
 		it('build scripts', function(done) {
