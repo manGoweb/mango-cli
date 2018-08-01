@@ -1,16 +1,12 @@
-FROM node:8
+FROM node:10
 
-MAINTAINER mangoweb
-
-# Install dependencies
-RUN apt-get update \
-    && apt-get install -y \
-        libelf-dev \
-        ocaml
+LABEL maintainer="mangoweb"
 
 ARG version=master
 RUN npm install --unsafe-perm -g https://github.com/manGoweb/mango-cli.git#$version
-RUN npm rebuild node-sass
+
+# Optional development test step
+# RUN (cd /usr/local/lib/node_modules/mango-cli && npm install-test)
 
 ENTRYPOINT ["mango"]
 CMD ["build"]
