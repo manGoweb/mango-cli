@@ -62,7 +62,6 @@
     "babel-loader": "^8.0.0-beta.4",
     "better-console": "^1.0.1",
     "browser-sync": "^2.24.6",
-    "cache-loader": "^1.2.2",
     "chalk": "^2.4.1",
     "chokidar": "^2.0.4",
     "compression": "^1.7.3",
