@@ -49,16 +49,16 @@
   },
   "homepage": "https://github.com/manGoweb/mango-cli",
   "dependencies": {
-    "@babel/core": "7.0.0-beta.54",
-    "@babel/plugin-proposal-class-properties": "7.0.0-beta.54",
-    "@babel/plugin-proposal-decorators": "7.0.0-beta.54",
-    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.54",
-    "@babel/plugin-syntax-class-properties": "7.0.0-beta.54",
-    "@babel/plugin-syntax-decorators": "7.0.0-beta.54",
-    "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.54",
-    "@babel/preset-env": "7.0.0-beta.54",
-    "@babel/preset-react": "7.0.0-beta.54",
-    "autoprefixer": "^9.0.1",
+    "@babel/core": "7.0.0-beta.55",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.55",
+    "@babel/plugin-proposal-decorators": "7.0.0-beta.55",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.55",
+    "@babel/plugin-syntax-class-properties": "7.0.0-beta.55",
+    "@babel/plugin-syntax-decorators": "7.0.0-beta.55",
+    "@babel/plugin-syntax-object-rest-spread": "7.0.0-beta.55",
+    "@babel/preset-env": "7.0.0-beta.55",
+    "@babel/preset-react": "7.0.0-beta.55",
+    "autoprefixer": "^9.0.2",
     "babel-loader": "^8.0.0-beta.4",
     "better-console": "^1.0.1",
     "browser-sync": "^2.24.6",
@@ -100,12 +100,12 @@
     "run-sequence": "^2.2.1",
     "semver": "^5.5.0",
     "sharp": "^0.20.5",
-    "ts-loader": "^4.4.1",
-    "typescript": "^2.9.2",
+    "ts-loader": "^4.4.2",
+    "typescript": "^3.0.1",
     "v8-compile-cache": "^2.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.16.2",
-    "webpack-stream": "^5.0.0",
+    "webpack": "^4.16.3",
+    "webpack-stream": "^5.1.0",
     "yargs": "^12.0.1",
     "yml-loader": "^2.1.0"
   },
@@ -119,6 +119,6 @@
   },
   "devDependencies": {
     "mocha": "^5.2.0",
-    "should": "^13.2.1"
+    "should": "^13.2.3"
   }
 }
