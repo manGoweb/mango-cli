@@ -62,6 +62,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 * `stylus` - options passed to Stylus compiler. Default sets `'include css': true`
 * `autoprefixer` - options passed to CSS [Autoprefixer](https://github.com/postcss/autoprefixer-core#usage)
 * `cssmin` - options passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) in build task.
+* `disableSourcemaps` - skips source maps in dev mode when `false`
 
 ---
 
@@ -77,12 +78,12 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 ### Images
 
 * `images` - array of all images - element can be:
-    * string (glob) of source image for minification or
-    * object for resize
-        * `src` - string (glob) source of images
-        * `sizes` - array of widths (int)
-        * `aspectRatio` - aspect ratio of image on output (float = width/height), if undefined or false aspect ratio of image is used
-        * `options` - [output options](http://sharp.dimens.io/en/stable/api-output/#jpeg) for [sharp](http://sharp.dimens.io/en/stable/) resizing engine
+		* string (glob) of source image for minification or
+		* object for resize
+				* `src` - string (glob) source of images
+				* `sizes` - array of widths (int)
+				* `aspectRatio` - aspect ratio of image on output (float = width/height), if undefined or false aspect ratio of image is used
+				* `options` - [output options](http://sharp.dimens.io/en/stable/api-output/#jpeg) for [sharp](http://sharp.dimens.io/en/stable/) resizing engine
 
 ---
 
@@ -95,14 +96,15 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 ### Sprites
 
 * `sprites` - an array of objects. Each object contains:
-  * `path` - to SVG files (e.g. `src/images/sources/foo/*.svg`)
-  * `name` - (optional) a prefix to SVG ids in generated sprites and name of the file
-  * `filename` - (optional) name of file to which will be sprites generated
+	* `path` - to SVG files (e.g. `src/images/sources/foo/*.svg`)
+	* `name` - (optional) a prefix to SVG ids in generated sprites and name of the file
+	* `filename` - (optional) name of file to which will be sprites generated
 
 ---
 
-### Buildstamp
+### Build
 
+* `cleanup` - prevents dist_dir cleanup when `false`
 * `buildstamp` - an array of file paths. A copy of selected files is made with prefix unique to each build in filename. The prefix is available by `#{buildstamp}` in jade and stored in file `dist_folder/.buildstamp.txt` for other template engines. In development the prefix is empty.
 
 ---
@@ -114,6 +116,6 @@ For example:
 
 ```
 "mapping":{
-  "scripts": ["js", "jsx", "es6", "es", "coffee", "my.extension", "tpl.html"]
+	"scripts": ["js", "jsx", "es6", "es", "coffee", "my.extension", "tpl.html"]
 }
 ```
