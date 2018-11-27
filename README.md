@@ -33,6 +33,7 @@ Scaffold and build your projects way more faster than before. Preconfigured fron
 
 <tr><th colspan=2 align=left>Scripts</th></tr>
 <tr><td><a href="https://webpack.js.org">Webpack</a></td><td>Static module bundler for modern JavaScript applications</td></tr>
+<tr><td><a href="https://www.typescriptlang.org/">TypeScript</a></td><td>Typed superset of JavaScript</td></tr>
 <tr><td><a href="https://babeljs.io/">Babel</a></td><td>Use next generation JavaScript today</td></tr>
 <tr><td><a href="http://facebook.github.io/react">React</a></td><td>JavaScript library for building user interfaces from Facebook</td></tr>
 <tr><td><a href="http://lisperator.net/uglifyjs">UglifyJS</a></td><td>JavaScript minifier</td></tr>
