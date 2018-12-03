@@ -1,6 +1,6 @@
 {
   "name": "mango-cli",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.",
   "main": "index.js",
   "scripts": {
