@@ -49,8 +49,8 @@
   },
   "homepage": "https://github.com/manGoweb/mango-cli",
   "dependencies": {
-    "@babel/core": "7.2.2",
-    "@babel/plugin-proposal-class-properties": "7.3.0",
+    "@babel/core": "7.3.3",
+    "@babel/plugin-proposal-class-properties": "7.3.3",
     "@babel/plugin-proposal-decorators": "7.3.0",
     "@babel/plugin-proposal-object-rest-spread": "7.3.2",
     "@babel/plugin-syntax-class-properties": "7.2.0",
@@ -59,13 +59,13 @@
     "@babel/plugin-syntax-object-rest-spread": "7.2.0",
     "@babel/preset-env": "7.3.1",
     "@babel/preset-react": "7.0.0",
-    "acorn": "^6.0.5",
-    "autoprefixer": "^9.4.7",
+    "acorn": "^6.1.0",
+    "autoprefixer": "^9.4.8",
     "babel-loader": "^8.0.5",
     "better-console": "^1.0.1",
     "browser-sync": "^2.26.3",
     "chalk": "^2.4.2",
-    "chokidar": "^2.0.4",
+    "chokidar": "^2.1.2",
     "compression": "^1.7.3",
     "del": "^3.0.0",
     "gift": "^0.10.2",
@@ -85,7 +85,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.0.9",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.7.0",
     "gulp-svg-sprite": "^1.5.0",
     "html-loader": "^0.5.5",
@@ -106,9 +106,9 @@
     "typescript": "3.1.x",
     "v8-compile-cache": "^2.0.2",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.29.1",
+    "webpack": "^4.29.5",
     "webpack-stream": "5.2.1",
-    "yargs": "^13.1.0",
+    "yargs": "^13.2.1",
     "yml-loader": "^2.1.0"
   },
   "optionalDependencies": {
@@ -120,7 +120,7 @@
     "tests_repo": "https://github.com/manGoweb/mango-cli-test.git"
   },
   "devDependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "^6.0.1",
     "should": "^13.2.3"
   }
 }
