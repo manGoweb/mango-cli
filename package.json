@@ -101,7 +101,7 @@
     "pug-loader": "^2.4.0",
     "run-sequence": "^2.2.1",
     "semver": "^5.6.0",
-    "sharp": "^0.21.3",
+    "sharp": "^0.22.0",
     "ts-loader": "^5.3.3",
     "typescript": "3.1.x",
     "v8-compile-cache": "^2.0.2",
