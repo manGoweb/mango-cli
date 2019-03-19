@@ -49,7 +49,7 @@
   },
   "homepage": "https://github.com/manGoweb/mango-cli",
   "dependencies": {
-    "@babel/core": "7.3.4",
+    "@babel/core": "7.4.0",
     "@babel/plugin-proposal-class-properties": "7.3.4",
     "@babel/plugin-proposal-decorators": "7.3.0",
     "@babel/plugin-proposal-object-rest-spread": "7.3.4",
