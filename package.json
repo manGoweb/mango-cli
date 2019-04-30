@@ -65,7 +65,7 @@
     "better-console": "^1.0.1",
     "browser-sync": "^2.26.3",
     "chalk": "^2.4.2",
-    "chokidar": "^2.1.5",
+    "chokidar": "^3.0.0",
     "compression": "^1.7.4",
     "del": "^4.1.0",
     "gift": "^0.10.2",
