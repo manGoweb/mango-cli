@@ -1,5 +1,6 @@
 language: node_js
 node_js:
+  - "12"
   - "10"
   - "8"
 
@@ -14,7 +15,7 @@ os:
   - linux
   - osx
 
-osx_image: xcode9.2
+osx_image: xcode10.2
 
 addons:
   apt:
@@ -33,7 +34,6 @@ before_install:
     fi
   - if [ $TRAVIS_OS_NAME == "osx" ]; then
       brew update;
-      brew install vips;
       brew install python@2;
       brew link --overwrite python@2;
       export TMPDIR="/tmp/";
