@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-require('v8-compile-cache')
-
 const argv = require('yargs')
 const checkError = require('../lib/helpers/checkerror')
 const Config = require('../lib/helpers/config')
