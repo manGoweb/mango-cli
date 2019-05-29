@@ -97,6 +97,7 @@
     "nib": "^1.1.2",
     "node-notifier": "^5.4.0",
     "node-sass": "^4.12.0",
+    "node-sass-package-importer": "^5.3.1",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "run-sequence": "^2.2.1",
