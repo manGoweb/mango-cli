@@ -104,9 +104,9 @@
     "semver": "^6.1.1",
     "sharp": "^0.22.1",
     "ts-loader": "^6.0.2",
-    "typescript": "3.5.x",
+    "typescript": "3.5.2",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.33.0",
+    "webpack": "^4.34.0",
     "webpack-stream": "5.2.1",
     "yargs": "^13.2.4",
     "yml-loader": "^2.1.0"
