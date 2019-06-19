@@ -1,6 +1,6 @@
 <p align="center"><img width="128" src="https://s3.eu-central-1.amazonaws.com/uploads.mangoweb.org/go-outline.svg"></p>
 
-mango-cli [![CircleCI](https://circleci.com/gh/manGoweb/mango-cli/tree/master.svg?style=svg)](https://circleci.com/gh/manGoweb/mango-cli/tree/master) [![Build Status](https://travis-ci.org/manGoweb/mango-cli.svg?branch=master)](https://travis-ci.org/manGoweb/mango-cli) [![Build status](https://ci.appveyor.com/api/projects/status/vwqy0au8l17xlmt9/branch/master?svg=true)](https://ci.appveyor.com/project/enzy/mango-cli/branch/master) [![NPM downloads](https://img.shields.io/npm/dm/mango-cli.svg)](https://www.npmjs.com/package/mango-cli)
+mango-cli [![CircleCI](https://circleci.com/gh/manGoweb/mango-cli/tree/master.svg?style=svg)](https://circleci.com/gh/manGoweb/mango-cli/tree/master) [![NPM downloads](https://img.shields.io/npm/dm/mango-cli.svg)](https://www.npmjs.com/package/mango-cli) [![Docker Pulls](https://img.shields.io/docker/pulls/mangoweb/mango-cli.svg)](https://hub.docker.com/r/mangoweb/mango-cli/)
 =========
 
 Scaffold and build your projects way more faster than before. Preconfigured frontend devstack to the absolute perfection. Fully automated to save your precious time. Ready for any type of web project.
@@ -58,7 +58,7 @@ npm install -g mango-cli
 
 Before installation check that your system has these requirements:
 
-- [Node.js LTS (8.x)](https://nodejs.org/en/download/)
+- [Node.js LTS (10.x)](https://nodejs.org/en/download/)
 - [Git](http://git-scm.com) executable in `PATH`
 
 #### Mac OS X
