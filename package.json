@@ -39,8 +39,10 @@
   ],
   "author": "manGoweb s.r.o. <info@mangoweb.cz> (www.mangoweb.cz)",
   "contributors": [
-    "Matěj Šimek <email@matejsimek.cz> (www.matejsimek.cz)",
-    "Viliam Kopecký <vk@viliamkopecky.cz> (viliamkopecky.com)"
+    "Filip Chalupa <chalupa.filip@gmail.com> (onset.github.io)",
+    "Matěj Šimek <matej@simek.pro> (matejsimek.com)",
+    "Viliam Kopecký <vk@viliamkopecky.cz> (viliamkopecky.com)",
+    "Vojta Staněk <stanekv01@gmail.com> (stanekv.eu)"
   ],
   "license": "MIT",
   "bugs": {
