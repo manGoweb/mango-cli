@@ -21,7 +21,7 @@ RUN apk --no-cache add \
 	git
 
 COPY --from=builder /usr/local/lib/node_modules/mango-cli /usr/local/lib/node_modules/mango-cli
-RUN ln -s ../lib/node_modules/mango-cli/bin/mango /usr/local/bin/mango
+RUN ln -s /usr/local/lib/node_modules/mango-cli/bin/mango /usr/local/bin/mango
 
 # Optional development test step
 # RUN (cd /usr/local/lib/node_modules/mango-cli && npm install-test)
