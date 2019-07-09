@@ -60,7 +60,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 ### Styles
 
 * `stylus` - options passed to Stylus compiler. Default sets `'include css': true`
-* `autoprefixer` - options passed to CSS [Autoprefixer](https://github.com/postcss/autoprefixer-core#usage)
+* `autoprefixer` - options passed to CSS [Autoprefixer](https://github.com/postcss/autoprefixer#options)
 * `cssmin` - options passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) in build task.
 * `disableSourcemaps` - skips source maps in dev mode when `false`
 
