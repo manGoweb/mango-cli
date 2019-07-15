@@ -4,4 +4,5 @@
 echo "------ HOOK START - BUILD -------"
 echo "Building: $SOURCE_BRANCH"
 docker build --build-arg VERSION="$SOURCE_BRANCH" -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME" .
+docker images
 echo "------ HOOK END - BUILD -------"
