@@ -1,5 +1,14 @@
 version: 2
 jobs:
+  lint:
+    working_directory: ~/manGoweb/mango-cli
+    docker:
+      - image: hadolint/hadolint:v1.17.0-debian
+    steps:
+      - checkout
+      - run:
+          name: hadolint
+          command: hadolint docker/Dockerfile
   build:
     working_directory: ~/manGoweb/mango-cli
     docker:
@@ -21,3 +30,10 @@ jobs:
       - run:
           name: test
           command: npm test
+
+workflows:
+ version: 2
+ test:
+   jobs:
+     - lint
+     - build
