@@ -2,5 +2,6 @@
 
 # https://docs.docker.com/docker-hub/builds/advanced/#build-hook-examples
 echo "------ HOOK START - BUILD -------"
-docker build --build-arg version=$SOURCE_BRANCH -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+echo "Building: $SOURCE_BRANCH"
+docker build --build-arg VERSION="$SOURCE_BRANCH" -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME" .
 echo "------ HOOK END - BUILD -------"
