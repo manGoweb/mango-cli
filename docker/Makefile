@@ -5,7 +5,7 @@ TAG = latest
 all: build publish
 
 build: Dockerfile
-	docker build --build-arg version=$(TAG) -t $(REPO):$(TAG) .
+	docker build --build-arg VERSION=$(TAG) -t $(REPO):$(TAG) .
 
 publish: Dockerfile
 	docker tag $(REPO):$(TAG) $(ORG)/$(REPO):$(TAG)
