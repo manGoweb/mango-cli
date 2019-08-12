@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/manGoweb/mango-cli
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - run:
