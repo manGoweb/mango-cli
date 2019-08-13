@@ -60,7 +60,7 @@
     "@babel/plugin-syntax-object-rest-spread": "7.2.0",
     "@babel/preset-env": "7.5.5",
     "@babel/preset-react": "7.0.0",
-    "acorn": "^6.2.1",
+    "acorn": "^7.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "better-console": "^1.0.1",
