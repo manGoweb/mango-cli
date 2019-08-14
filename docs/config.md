@@ -54,6 +54,7 @@ All options can be overridden in `mango.local.yaml` (or `mango.local.json`) file
 * `browsersync` - options passed to [BrowserSync](http://www.browsersync.io/docs/options/) dev server
 * `proxy` - start dev server in [proxy mode](http://www.browsersync.io/docs/options/#option-proxy)
 * `watch` - additional files to watch resulting in browser reload
+* `chokidar` - [extra options](https://github.com/paulmillr/chokidar#performance) passed to [chokidar](https://github.com/paulmillr/chokidar) file watcher. [Defaults...](https://github.com/manGoweb/mango-cli/blob/master/lib/mango.js#L221)
 
 ---
 
