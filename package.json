@@ -110,7 +110,7 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^4.39.1",
     "webpack-stream": "5.2.1",
-    "yargs": "^13.3.0",
+    "yargs": "^14.0.0",
     "yml-loader": "^2.1.0"
   },
   "optionalDependencies": {},
