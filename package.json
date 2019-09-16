@@ -105,10 +105,10 @@
     "run-sequence": "^2.2.1",
     "semver": "^6.3.0",
     "sharp": "^0.23.0",
-    "ts-loader": "^6.0.4",
-    "typescript": "3.6.2",
+    "ts-loader": "^6.1.0",
+    "typescript": "3.6.3",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.39.3",
+    "webpack": "^4.40.2",
     "webpack-stream": "5.2.1",
     "yargs": "^14.0.0",
     "yml-loader": "^2.1.0"
