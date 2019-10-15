@@ -36,6 +36,7 @@ Scaffold and build your projects way more faster than before. Preconfigured fron
 <tr><td><a href="https://www.typescriptlang.org/">TypeScript</a></td><td>Typed superset of JavaScript</td></tr>
 <tr><td><a href="https://babeljs.io/">Babel</a></td><td>Use next generation JavaScript today</td></tr>
 <tr><td><a href="http://facebook.github.io/react">React</a></td><td>JavaScript library for building user interfaces from Facebook</td></tr>
+<tr><td><a href="https://svelte.dev/">Svelte</a></td><td>Cybernetically enhanced web apps</td></tr>
 <tr><td><a href="http://lisperator.net/uglifyjs">UglifyJS</a></td><td>JavaScript minifier</td></tr>
 
 <tr><th colspan=2 align=left>Tools</th></tr>
