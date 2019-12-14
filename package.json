@@ -103,7 +103,7 @@
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
     "run-sequence": "^2.2.1",
-    "semver": "^6.3.0",
+    "semver": "^7.0.0",
     "sharp": "^0.23.3",
     "svelte": "^3.16.0",
     "svelte-loader": "^2.13.6",
