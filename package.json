@@ -104,7 +104,7 @@
     "pug-loader": "^2.4.0",
     "run-sequence": "^2.2.1",
     "semver": "^7.1.1",
-    "sharp": "^0.23.4",
+    "sharp": "^0.24.1",
     "svelte": "^3.16.7",
     "svelte-loader": "^2.13.6",
     "ts-loader": "^6.2.1",
